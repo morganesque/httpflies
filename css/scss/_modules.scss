@@ -1,0 +1,23 @@
+
+// @import "modules/example";
+
+@import "modules/header";
+// @import "modules/carousel";
+
+.container {
+    position:relative;
+}
+
+.box {
+    position:relative;
+    width:300px;
+    height:200px;
+    background:red;
+    outline:1px solid black;
+    overflow:visible;
+
+    svg {
+        width:200px;
+        height:200p;
+    }
+}

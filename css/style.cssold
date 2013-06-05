@@ -1,0 +1,426 @@
+@charset "UTF-8";
+/*------------------------------------*\
+    STYLE.CSS
+\*------------------------------------*/
+/**
+ *
+ * sass --watch style.scss:style.min.css --style compressed
+ *
+ * Here we pull in some variables, include the inuit.css framework, then add our
+ * project-specific components afterwards.
+ */
+/**
+ * Setup
+ */
+/**
+ * She’s all yours, cap’n... Begin importing your stuff here.
+ */
+body {
+  font-size: 16px;
+}
+
+.tom {
+  background-color: red;
+}
+
+.bg-1 {
+  background-color: #ff1100;
+}
+
+.bg-2 {
+  background-color: #ff2200;
+}
+
+.bg-3 {
+  background-color: #ff3300;
+}
+
+.bg-4 {
+  background-color: #ff4400;
+}
+
+.bg-5 {
+  background-color: #ff5500;
+}
+
+.bg-6 {
+  background-color: #ff6600;
+}
+
+.bg-7 {
+  background-color: #ff7700;
+}
+
+.bg-8 {
+  background-color: #ff8800;
+}
+
+.bg-9 {
+  background-color: #ff9900;
+}
+
+.bg-10 {
+  background-color: #ffaa00;
+}
+
+.bg-11 {
+  background-color: #ffbb00;
+}
+
+.bg-12 {
+  background-color: #ffcc00;
+}
+
+.bg-13 {
+  background-color: #ffdd00;
+}
+
+.bg-14 {
+  background-color: #ffee00;
+}
+
+.bg-15 {
+  background-color: yellow;
+}
+
+.bg-16 {
+  background-color: #eeff00;
+}
+
+.bg-17 {
+  background-color: #ddff00;
+}
+
+.bg-18 {
+  background-color: #ccff00;
+}
+
+.bg-19 {
+  background-color: #bbff00;
+}
+
+.bg-20 {
+  background-color: #aaff00;
+}
+
+.bg-21 {
+  background-color: #99ff00;
+}
+
+.bg-22 {
+  background-color: #88ff00;
+}
+
+.bg-23 {
+  background-color: #77ff00;
+}
+
+.bg-24 {
+  background-color: #66ff00;
+}
+
+.bg-25 {
+  background-color: #55ff00;
+}
+
+.bg-26 {
+  background-color: #44ff00;
+}
+
+.bg-27 {
+  background-color: #33ff00;
+}
+
+.bg-28 {
+  background-color: #22ff00;
+}
+
+.bg-29 {
+  background-color: #11ff00;
+}
+
+.bg-30 {
+  background-color: lime;
+}
+
+.bg-31 {
+  background-color: #00ff11;
+}
+
+.bg-32 {
+  background-color: #00ff22;
+}
+
+.bg-33 {
+  background-color: #00ff33;
+}
+
+.bg-34 {
+  background-color: #00ff44;
+}
+
+.bg-35 {
+  background-color: #00ff55;
+}
+
+.bg-36 {
+  background-color: #00ff66;
+}
+
+.bg-37 {
+  background-color: #00ff77;
+}
+
+.bg-38 {
+  background-color: #00ff88;
+}
+
+.bg-39 {
+  background-color: #00ff99;
+}
+
+.bg-40 {
+  background-color: #00ffaa;
+}
+
+.bg-41 {
+  background-color: #00ffbb;
+}
+
+.bg-42 {
+  background-color: #00ffcc;
+}
+
+.bg-43 {
+  background-color: #00ffdd;
+}
+
+.bg-44 {
+  background-color: #00ffee;
+}
+
+.bg-45 {
+  background-color: cyan;
+}
+
+.bg-46 {
+  background-color: #00eeff;
+}
+
+.bg-47 {
+  background-color: #00ddff;
+}
+
+.bg-48 {
+  background-color: #00ccff;
+}
+
+.bg-49 {
+  background-color: #00bbff;
+}
+
+.bg-50 {
+  background-color: #00aaff;
+}
+
+.bg-51 {
+  background-color: #0099ff;
+}
+
+.bg-52 {
+  background-color: #0088ff;
+}
+
+.bg-53 {
+  background-color: #0077ff;
+}
+
+.bg-54 {
+  background-color: #0066ff;
+}
+
+.bg-55 {
+  background-color: #0055ff;
+}
+
+.bg-56 {
+  background-color: #0044ff;
+}
+
+.bg-57 {
+  background-color: #0033ff;
+}
+
+.bg-58 {
+  background-color: #0022ff;
+}
+
+.bg-59 {
+  background-color: #0011ff;
+}
+
+.bg-60 {
+  background-color: blue;
+}
+
+.bg-61 {
+  background-color: #1100ff;
+}
+
+.bg-62 {
+  background-color: #2200ff;
+}
+
+.bg-63 {
+  background-color: #3300ff;
+}
+
+.bg-64 {
+  background-color: #4400ff;
+}
+
+.bg-65 {
+  background-color: #5500ff;
+}
+
+.bg-66 {
+  background-color: #6600ff;
+}
+
+.bg-67 {
+  background-color: #7700ff;
+}
+
+.bg-68 {
+  background-color: #8800ff;
+}
+
+.bg-69 {
+  background-color: #9900ff;
+}
+
+.bg-70 {
+  background-color: #aa00ff;
+}
+
+.bg-71 {
+  background-color: #bb00ff;
+}
+
+.bg-72 {
+  background-color: #cc00ff;
+}
+
+.bg-73 {
+  background-color: #dd00ff;
+}
+
+.bg-74 {
+  background-color: #ee00ff;
+}
+
+.bg-75 {
+  background-color: magenta;
+}
+
+.bg-76 {
+  background-color: #ff00ee;
+}
+
+.bg-77 {
+  background-color: #ff00dd;
+}
+
+.bg-78 {
+  background-color: #ff00cc;
+}
+
+.bg-79 {
+  background-color: #ff00bb;
+}
+
+.bg-80 {
+  background-color: #ff00aa;
+}
+
+.bg-81 {
+  background-color: #ff0099;
+}
+
+.bg-82 {
+  background-color: #ff0088;
+}
+
+.bg-83 {
+  background-color: #ff0077;
+}
+
+.bg-84 {
+  background-color: #ff0066;
+}
+
+.bg-85 {
+  background-color: #ff0055;
+}
+
+.bg-86 {
+  background-color: #ff0044;
+}
+
+.bg-87 {
+  background-color: #ff0033;
+}
+
+.bg-88 {
+  background-color: #ff0022;
+}
+
+.bg-89 {
+  background-color: #ff0011;
+}
+
+.bg-90 {
+  background-color: red;
+}
+
+.bg-91 {
+  background-color: #ff1100;
+}
+
+body {
+  background-color: #ECECE4;
+  font-family: sans-serif;
+}
+
+.main {
+  display: block;
+  margin: 0 auto;
+  max-width: 980px;
+}
+
+.canvas {
+  position: relative;
+  display: block;
+  float: left;
+  margin: 0 3% 3%;
+  padding: 0px;
+  width: 19%;
+  width: 27%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  overflow: hidden;
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-box-shadow: 0px 0px 10px 20px #999 inset;
+  box-shadow: 0px 0px 10px 0px #999 inset;
+}

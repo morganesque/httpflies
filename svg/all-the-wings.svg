@@ -1,60 +1,4 @@
-<!DOCTYPE html>
-
-<!--[if lt IE 7 ]> <html class="ie ie6 no-js"> <![endif]-->
-<!--[if IE 7 ]>    <html class="ie ie7 no-js"> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie ie8 no-js"> <![endif]-->
-<!--[if IE 9 ]>    <html class="ie ie9 no-js"> <![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js"><!--<![endif]-->
-
-<head id="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>HTTPFlies</title>
-
-    <meta name="title" content="Page Title">
-    <meta name="description" content="">	
-    <meta name="google-site-verification" content="">
-    <meta name="author" content="Tom Morgan">
-    <meta name="Copyright" content="Copyright Tom Morgan 2011. All Rights Reserved.">
-    <meta name="DC.title" content="">
-    <meta name="DC.subject" content="">
-    <meta name="DC.creator" content="Tom Morgan">    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><!-- 72x72 -->
-    <link rel="image_src" href=""><!-- facebook thumbnail -->
-    <link rel="shortcut icon" href="favicon.ico">
-
-    <script type="text/javascript" src="//use.typekit.net/muk6swr.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    
-    <link rel="stylesheet" live="false" href="css/style.css" type="text/css" media="screen" title="The Styles" charset="utf-8">    
-    </head>
-<body>  
-    <div class="page">
-        <header class="header">
-            <div class="logo">
-                <div class="col"></div>
-                <div class="svg"></div>
-            </div>
-            <h1 class="beta">httpflies</h1>
-            <hr class="line"/>
-            <p class="sub">A Miscellany Of Http Error Codes</p>
-        </header>
-    </div><!-- .page -->    
-
-    <section class="container">
-    <div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div>    </section><!-- .container -->
-
-    <svg id="original" version="1.1"
-     xmlns="http://www.w3.org/2000/svg" 
-     xmlns:xlink="http://www.w3.org/1999/xlink" 
-     xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-     xml:space="preserve"
-     >
-     <g class="butterfly">
-    <path fill="#FF0000" d="M158.641,114.718c-1.531-4.826-4.801-13.245-9.975-17.384c-7.5-6-23.5-29.5-31.5-37
+<path fill="#FF0000" d="M158.641,114.718c-1.531-4.826-4.801-13.245-9.975-17.384c-7.5-6-23.5-29.5-31.5-37
 	s-50.953-44.333-81.5-42.5c-25,1.5-22.5,13-23,16.5s4,14,5.5,17s2.5,6.5,4,9s6,7,6,9.5s3,5.5,4,8s0,7.5,1,9.5s5,8,5.5,10.5
 	s1.5,6,3,8s3.5,3,4,6s1.5,3.5,5,5.5s4,5.5,5.5,8c1.131,1.886,9.662,7.466,27.512,9.023c-2.849,1.597-11.746,6.737-14.428,10.698
 	c-3.057,4.626-3.101,8.142-5.437,10.425c-1.228,1.228-3.991,4.107-6.461,7.222c-2.464,3.138-4.669,6.405-4.707,8.796
@@ -303,11 +247,3 @@
 	C163.812,79.62,159.814,78.42,157.814,80.819z"/>
 <path fill="#57969E" d="M174.512,80.819c-2-2.399-5.998-1.199-5.998-1.199c1.4,3.998,5.197,9.195,5.998,8.995
 	C175.311,88.416,176.51,83.219,174.512,80.819z"/>
-    </g>
-</svg>
-<script src="js/all.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/page.js" type="text/javascript" charset="utf-8"></script>
-
-
-</body>
-</html>

@@ -1,0 +1,21 @@
+<circle r="100" cx="110" cy="110" fill="slategrey" stroke="#000" stroke-width="7">  
+<animate attributeName="r" values="0;100;0" dur="3s" repeatCount="indefinite"/>  
+<animate attributeName="stroke-width" from="0" to="10" dur="7s"/>  
+<!-- <animateTransform attributeName="transform" type="scale" from="0" to="1" dur="2s"/>   -->
+</circle>  
+
+
+
+<!-- <g>
+    <g>
+        <path d="M 40 100 c 40 48 120 -32 160 -6 c 0 0 5 4 10 -3 c 10 -103 50 -83 90 -42 c 0 0 20 12
+        30 7 c -2 12 -18 17 -40 17 c -55 -2 -40 25 -20 35 c 30 20 35 65 -30 71 c -50 4 -170 4 -200 -79z" style="fill: green; stroke:black;">
+            <animateTransform attributeName="transform" attributeType="XML" type="scale" from="0.4"
+            to="0.3" begin="0s" dur="2s" fill="freeze" />
+        </path>
+        <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0"
+        to="21" begin="0s" dur="2s" fill="freeze" />
+    </g>
+    <animateTransform attributeName="transform" attributeType="XML" type="translate"
+    from="0,0" to="90,45" begin="0s" dur="2s" fill="freeze" />
+</g> -->

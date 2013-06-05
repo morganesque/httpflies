@@ -1,0 +1,17 @@
+
+@import "lib/normalize";
+@import "lib/typeplate";
+
+$bgColor:#f4f5f6;
+$headColor:#d5d8de;
+$textColor:#919aa9;
+
+body {
+    font-weight:400;
+    color:$textColor;    
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color:$textColor;
+    font-weight:100;
+}
