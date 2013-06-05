@@ -723,6 +723,12 @@ h6 {
  * Extend this object into your markup.
  *
  */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
   font-weight: 400;
   color: #919aa9;
@@ -1681,17 +1687,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .container {
   position: relative;
+  margin-top: 2em;
 }
 
 .box {
   position: relative;
   width: 300px;
   height: 200px;
-  background: red;
-  outline: 1px solid black;
   overflow: visible;
 }
-.box svg {
-  width: 200px;
-  height: 200p;
+
+#original {
+  display: none;
 }

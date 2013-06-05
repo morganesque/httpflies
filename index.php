@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-
 <!--[if lt IE 7 ]> <html class="ie ie6 no-js"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie ie7 no-js"> <![endif]-->
 <!--[if IE 8 ]>    <html class="ie ie8 no-js"> <![endif]-->
 <!--[if IE 9 ]>    <html class="ie ie9 no-js"> <![endif]-->
 <!--[if gt IE 9]><!--><html class="no-js"><!--<![endif]-->
-
-<head id="">
+<head id="httpflies-head">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>HTTPFlies</title>
-
     <meta name="title" content="Page Title">
     <meta name="description" content="">	
     <meta name="google-site-verification" content="">
@@ -18,17 +15,14 @@
     <meta name="DC.title" content="">
     <meta name="DC.subject" content="">
     <meta name="DC.creator" content="Tom Morgan">    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">    
     <meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><!-- 72x72 -->
     <link rel="image_src" href=""><!-- facebook thumbnail -->
     <link rel="shortcut icon" href="favicon.ico">
-
     <script type="text/javascript" src="//use.typekit.net/muk6swr.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>    
     <link rel="stylesheet" live="true" href="css/style.css" type="text/css" media="screen" title="The Styles" charset="utf-8">    
     <?php /* <script src="js/modernizr.js" type="text/javascript" charset="utf-8"></script> */ ?>
 </head>
@@ -47,14 +41,20 @@
 
     <section class="container">
     <?php
-        for ($i=0; $i < 100; $i++) { 
-            echo '<div class="box"></div>';
+        for ($i=0; $i < 20; $i++) { 
+            echo '<div class="box">';
+            echo '<div class="barnum"></div>';
+            echo '</div>';
         }
     ?>
     </section><!-- .container -->
 
-    <?php include('svg/svg.php'); ?>
+    <div class="tester"><?php include('svg/svg.php'); ?></div>
 
+<script src="js/lib/jquery-1.10.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/lib/jquery.svg.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/lib/jquery.svgdom.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/lib/colors.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/all.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/page.js" type="text/javascript" charset="utf-8"></script>
 
