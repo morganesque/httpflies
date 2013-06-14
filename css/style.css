@@ -739,6 +739,19 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 100;
 }
 
+#original {
+  display: none;
+}
+
+.large-text {
+  text-transform: uppercase;
+  color: #d5d8de;
+}
+
+.nw {
+  white-space: nowrap;
+}
+
 /*------------------------------------*\
     $CSSWIZARDRY-GRIDS
 \*------------------------------------*/
@@ -1628,9 +1641,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1em 0;
 }
 .header h1 {
-  text-transform: uppercase;
   letter-spacing: 0.19em;
-  color: #d5d8de;
 }
 .header .logo {
   width: 80px;
@@ -1687,16 +1698,57 @@ h1, h2, h3, h4, h5, h6 {
 
 .container {
   position: relative;
-  margin-top: 2em;
+  margin: 2em auto;
+  width: 90%;
 }
 
 .box {
   position: relative;
-  width: 300px;
+  width: 320px;
   height: 200px;
   overflow: visible;
+  padding: 2em;
+}
+.box.w2 {
+  width: 160px;
+}
+.box.w3 {
+  width: 240px;
+}
+.box.w4 {
+  width: 266.66667px;
 }
 
-#original {
+.barnum:link, .barnum:visited {
+  position: relative;
+  display: block;
+  text-decoration: none;
+}
+
+.label {
+  font-weight: 100;
+  width: 100%;
+  padding: 0;
+}
+.label p {
+  width: 80px;
+  margin: 0 auto;
+  padding: 0;
+  border: 1px solid #d5d8de;
+  text-align: center;
+  background: white;
+  line-height: 1.2em;
+  padding-bottom: 0.1em;
+}
+
+.name {
+  display: none;
+}
+
+.latin {
+  display: none;
+}
+
+.tweet-this {
   display: none;
 }

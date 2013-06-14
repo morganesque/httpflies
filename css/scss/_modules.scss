@@ -1,3 +1,4 @@
+@import "compass/css3/transition";
 
 // @import "modules/example";
 
@@ -6,14 +7,72 @@
 
 .container {
     position:relative;
-    margin-top:2em;
+    margin:2em auto;
+    width:90%;
 }
 
-.box {
+.box {  
+
+    $biggest: 320px;
+
     position:relative;
-    width:300px;
+    // width:percentage(1/12);
+    width:$biggest;
     height:200px;
-    overflow:visible;
+    overflow:visible;    
+    padding:2em;
+    // background:rgba($bgColor,0.19);
+    // outline:1px solid rgba($bgColor,0.76);
+    // border-left:1px solid $headColor;
+    // border-top:1px solid $headColor;
+
+    // @include single-transition(height 1s ease-out);
+
+    // &.w2 { width:percentage(1/6) }
+    // &.w3 { width:percentage(1/4) }
+    // &.w4 { width:percentage(1/3) }
+    // &.w5 { width:percentage(1/2) }
+
+    &.w2 { width:($biggest * 1/2) }
+    &.w3 { width:($biggest * 3/4) }
+    &.w4 { width:($biggest * 5/6) }    
 }
 
-#original {display:none}
+.barnum {    
+
+    &:link,
+    &:visited { 
+        position:relative;       
+        display:block;
+        text-decoration:none;
+        // background:red;
+    }
+    
+    &:hover,
+    &:active {
+
+    }
+}
+
+.label {
+    font-weight:100;
+    width:100%;
+    padding:0;    
+
+    p {
+        width:80px;
+        margin:0 auto; padding:0;
+        border:1px solid $headColor;
+        text-align:center;
+        background:white;
+        line-height:1.2em;
+        padding-bottom:0.1em;
+    }
+}
+
+.name {
+    display:none;
+}
+
+.latin {display:none}
+.tweet-this {display:none}

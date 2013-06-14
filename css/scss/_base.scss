@@ -17,3 +17,14 @@ h1,h2,h3,h4,h5,h6 {
     color:$textColor;
     font-weight:100;
 }
+
+#original {display:none}
+
+.large-text {
+    text-transform:uppercase;    
+    color:$headColor;
+}
+
+.nw {
+    white-space:nowrap;
+}

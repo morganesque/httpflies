@@ -21,40 +21,50 @@
     <link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><!-- 72x72 -->
     <link rel="image_src" href=""><!-- facebook thumbnail -->
     <link rel="shortcut icon" href="favicon.ico">
-    <script type="text/javascript" src="//use.typekit.net/muk6swr.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>    
+    <?php /* <script type="text/javascript" src="//use.typekit.net/muk6swr.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>     */ ?>
     <link rel="stylesheet" live="true" href="css/style.css" type="text/css" media="screen" title="The Styles" charset="utf-8">    
     <?php /* <script src="js/modernizr.js" type="text/javascript" charset="utf-8"></script> */ ?>
 </head>
 <body>  
-    <div class="page">
+    <div class="page">        
         <header class="header">
             <div class="logo">
                 <div class="col"></div>
                 <div class="svg"></div>
             </div>
-            <h1 class="beta">httpflies</h1>
+            <h1 class="beta large-text">httpflies</h1>
             <hr class="line"/>
-            <p class="sub">A Miscellany Of Http Error Codes</p>
-        </header>
+            <p class="sub">A Miscellany Of <span class="nw">Http Response Codes</span></p>
+        </header>          
+        <section class="container">            
+            <div class="slider">
+        <?php
+            for ($i=0; $i < 3; $i++) { 
+                echo '<div class="box">';
+                echo '<a href="#" class="barnum"></a>';                                
+                echo '<div class="label gamma large-text"><p>404</p></div>';
+                echo '<div class="name">Partial Content</div>';
+                echo '<div class="latin">Partialium Contentius</div>';
+                echo '<hr />';
+                echo '<div class="tweet-this"><span class="icon"></span>Tweet this Httpfly</div>';
+                echo '</div>';
+            }
+        ?>
+            <!-- <article class="single">
+                <div class="it"></div>
+                <div class="label"><p>404</p></div>
+                
+            </article> -->
+            <div class="slider"><!-- .slider -->
+        </section><!-- .container -->
     </div><!-- .page -->    
-
-    <section class="container">
-    <?php
-        for ($i=0; $i < 20; $i++) { 
-            echo '<div class="box">';
-            echo '<div class="barnum"></div>';
-            echo '</div>';
-        }
-    ?>
-    </section><!-- .container -->
 
     <div class="tester"><?php include('svg/svg.php'); ?></div>
 
 <script src="js/lib/jquery-1.10.1.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/lib/jquery.svg.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/lib/jquery.svgdom.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/lib/colors.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/all.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/page.js" type="text/javascript" charset="utf-8"></script>
 

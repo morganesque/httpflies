@@ -1,3 +1,4 @@
+/*! jRumble v1.3 - http://jackrugile.com/jrumble */
 /*
 jRumble v1.3 - http://jackrugile.com/jrumble
 by Jack Rugile - http://jackrugile.com
