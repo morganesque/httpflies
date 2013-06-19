@@ -2,20 +2,20 @@
 
 $(document).ready(function()
 {    
+	$('rect.gone').remove(); // hide the degbugging rectangle (for now).
 
-	var Color = net.brehaut.Color;	
+	var Color = net.brehaut.Color; 			// easier to use reference.
+	var types = ['one','two','three'];		// types of butterfly wing.
+	var huts = 0;							// to count the httpflies.
 
-	$('rect.gone').remove();
-
-	var types = ['one','two','three'];
-
-	var huts = 0;
-
+	/*
+		Factory (haha!) function for creating httpflies. 
+	*/
 	function createHttpfly(code)
 	{
-		var newHttpfly = $('#original').clone().attr('id',code)
-		var wings = newHttpfly.find('.the_wings');	
-		var chosen = types[Math.floor(Math.random()*types.length)];
+		var newHttpfly = $('#original').clone().attr('id',code); 		// clone the original SVG data.
+		var wings = newHttpfly.find('.the_wings');						// grab the wings part.
+		var chosen = types[Math.floor(Math.random()*types.length)];		// decide which wing shape to use.
 		
 		$(types).each(function(i,val)
 		{
@@ -37,9 +37,10 @@ $(document).ready(function()
 					.appendTo(wings)
 					.attr('transform','scale(-1,1),translate(-332,0)');
 
+				// create a random colour.
 				var hue = Math.floor(Math.random()*360);
-				var col = Color({hue:hue, saturation:1, lightness:0.5})	
-				var col3 = col.shiftHue(45);
+				var col = Color({hue:hue, saturation:1, lightness:0.5})	// the first gradient colour.
+				var col3 = col.shiftHue(45);							// the other gradient colour.
 
 				// grab the gradient.
 				var grad = newHttpfly.find('.gradient');
@@ -53,10 +54,10 @@ $(document).ready(function()
 				// apply the gradient to the background wing.
 				wings.find('.back').attr('fill','url(#grad'+huts+')');
 
-				var col2 = col.darkenByAmount(0.45);
+				var col2 = col.darkenByAmount(0.45);					// wing mask colour.
 				wings.find('.front').attr('fill',col2.toString());				
 
-				huts++;
+				huts++; // count those httpflies.
 
 			} else {
 				// remove the other shapes from the SVG.
@@ -67,31 +68,29 @@ $(document).ready(function()
 		return newHttpfly;
 	}
 
-	// $('.barnum').each(function()
-	// {		
-	// 	$(createHttpfly(404)).appendTo($(this));
-	// });	
-
 	$('.container .box').each(function(i)
 	{
-		var ratio = 340/290;
+		var ratio = 340/290; // this is the ratio of the original SVG (a magic number - yuk!)
 
 		// var r = Math.random() * 5;
 		var r = i;
-		if (r < 1) $(this).addClass('w2');
+			 if (r < 1) $(this).addClass('w2');
 		else if (r < 2) $(this).addClass('w3');
 		else if (r < 3) $(this).addClass('w4');
 		else if (r < 4) $(this).addClass('w5');
 
 		var w = $(this).width();
-		$(this).height((w/ratio)+20);
+		$(this).height((w/ratio)+20); 		// resize the height based on the width.
 
-		var b = $(this).find('.barnum');
+		var b = $(this).find('.barnum'); 	// grab the container for the httpfly.
 
-		$(createHttpfly(404)).appendTo(b);
+		$(createHttpfly(404)).appendTo(b); 	// stick in the httpfly.
 		
 	});
 
+	/*
+		Trigger packery on the whole thing.
+	*/
 	$('.container').packery(
 	{
 		 itemSelector: '.box'
@@ -128,75 +127,4 @@ $(document).ready(function()
 
 		},time);		
 	});
-
-
-	$(createHttpfly(404)).appendTo('.it');
-	
-	// $('.container .box').wookmark();    	
-
-	// $(window).on("debouncedresize", function(e) 
-	// {
-	// 	$('.container .box').wookmark();    	
-	// });
-
-	// var butterfly = $('.butterfly').find('image').find('.two'); console.log(butterfly);
-	
-	// var shadow = $('.the_wings image.wing.two'); console.log(shadow);
-	// shadow.attr('opacity',0.42);
-	// var matrix = shadow.attr('transform');
-	// shadow
-	// 	.clone()
-	// 	.appendTo($('.the_wings'))
-	// 	.attr('transform','scale(-1,1),translate(-334,0),'+matrix);
-
-	// $('.butterfly .the_wings path.wing.two')
-	// 	.removeClass('gone')
-	// 	.clone()
-	// 	.appendTo($('.the_wings'))
-	// 	.attr('transform','scale(-1,1),translate(-334,0)');
-
-	// $('.back').attr('fill','#0000FF');
-	
-
-	
-
-	// $('.wing3-mask').clone().attr('transform','translate(265,0) scale(-1,1)').attr('fill','blue').appendTo('.butterfly');
-
-	// for (var i = 1; i <= 91; i++) 
-	// {
-	// 	$('#starter').clone().attr('id','').addClass('bg-'+i).appendTo('.main');
-	// }
-
-	// var minw = 999999;
-	// $('.canvas').each(function()
-	// {
-	// 	var w = $(this).width();
-	// 	if (w < minw) minw = w;
-	// });
-
-	// $('.canvas').height(minw);
-
-	// $('.canvas').on('mouseenter',function()
-	// {
-	// 	TweenMax.to($(this).find('.wings'), .5, {css:{fill:'#FFF'}});
-	// 	TweenMax.to($(this).find('.body'), .5, {css:{fill:'#0F0'}});
-	// 	TweenMax.to($(this).find('.wing-circle-bot'), .5, {css:{opacity:0.9, fill:'#00F'}});
-	// 	TweenMax.to($(this).find('.wing-circle-top'), .5, {css:{opacity:0.9, fill:'#F00'}});
-	// });
-
-	// $('.canvas').on('mouseleave',function()
-	// {
-	// 	TweenMax.to($(this).find('.wings'), .5, {css:{fill:'#000'}});
-	// 	TweenMax.to($(this).find('.body'), .5, {css:{fill:'#000'}});
-	// 	TweenMax.to($(this).find('.wing-circle-bot'), .5, {css:{opacity:0.2, fill:'#FFF'}});
-	// 	TweenMax.to($(this).find('.wing-circle-top'), .5, {css:{opacity:0.2, fill:'#FFF'}});
-	// });
-
-	// $('.wing-circle-bot').css({opacity:0.5, fill:'#FFF'});
-	// $('.wing-circle-top').css({opacity:0.5, fill:'#FFF'});
-
-	// $('.wings').css({fill:'blue'});
-	// $('.body').css({fill:'red'});
-	
-    
 });

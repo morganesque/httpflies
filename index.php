@@ -39,22 +39,21 @@
         </header>          
         <section class="container">            
             <div class="slider">
-        <?php
-            for ($i=0; $i < 3; $i++) { 
-                echo '<div class="box">';
-                echo '<a href="#" class="barnum"></a>';                                
-                echo '<div class="label gamma large-text"><p>404</p></div>';
-                echo '<div class="name">Partial Content</div>';
-                echo '<div class="latin">Partialium Contentius</div>';
-                echo '<hr />';
-                echo '<div class="tweet-this"><span class="icon"></span>Tweet this Httpfly</div>';
-                echo '</div>';
-            }
-        ?>
+            <?php
+                for ($i=0; $i < 3; $i++) { 
+                    echo '<div class="box">';
+                    echo '<a href="#" class="barnum"></a>';                                
+                    echo '<div class="label gamma large-text"><p>404</p></div>';
+                    echo '<div class="name">Partial Content</div>';
+                    echo '<div class="latin">Partialium Contentius</div>';
+                    echo '<hr />';
+                    echo '<div class="tweet-this"><span class="icon"></span>Tweet this Httpfly</div>';
+                    echo '</div>';
+                }
+            ?>
             <!-- <article class="single">
                 <div class="it"></div>
-                <div class="label"><p>404</p></div>
-                
+                <div class="label"><p>404</p></div>                
             </article> -->
             <div class="slider"><!-- .slider -->
         </section><!-- .container -->
