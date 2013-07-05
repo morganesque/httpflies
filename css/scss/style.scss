@@ -4,10 +4,16 @@
 @import "compass/css3/border-radius";
 @import "compass/css3/transform";
 @import "compass/css3/inline-block";
+@import "compass/css3/transition";
+@import "compass/css3/opacity";
 
 // SMACSS main imports
 @import "base";
 @import "layout";
+
 @import "modules";
-@import "states";
-@import "themes";
+@import "modules/header";
+@import "modules/box";
+
+// @import "states";
+// @import "themes";

@@ -1,78 +1,109 @@
-@import "compass/css3/transition";
+/*
+    Tiny modules that don't need splitting out.
+*/
 
-// @import "modules/example";
-
-@import "modules/header";
-// @import "modules/carousel";
-
-.container {
-    position:relative;
-    margin:2em auto;
-    width:90%;
+/* ----- THE HR LINE ---- */
+.line {
+    background-color:$headColor;
+    width:6em;
+    height:1px;
+    margin:0 auto 0.5em;
+    border:none;
 }
 
-.box {  
-
-    $biggest: 320px;
-
-    position:relative;
-    // width:percentage(1/12);
-    width:$biggest;
-    height:200px;
-    overflow:visible;    
-    padding:2em;
-    // background:rgba($bgColor,0.19);
-    // outline:1px solid rgba($bgColor,0.76);
-    // border-left:1px solid $headColor;
-    // border-top:1px solid $headColor;
-
-    // @include single-transition(height 1s ease-out);
-
-    // &.w2 { width:percentage(1/6) }
-    // &.w3 { width:percentage(1/4) }
-    // &.w4 { width:percentage(1/3) }
-    // &.w5 { width:percentage(1/2) }
-
-    &.w2 { width:($biggest * 1/2) }
-    &.w3 { width:($biggest * 3/4) }
-    &.w4 { width:($biggest * 5/6) }    
-}
-
-.barnum {    
-
-    &:link,
-    &:visited { 
-        position:relative;       
-        display:block;
-        text-decoration:none;
-        // background:red;
-    }
-    
-    &:hover,
-    &:active {
-
-    }
-}
-
+/* ----- NUMBER LABEL ---- */
 .label {
-    font-weight:100;
     width:100%;
-    padding:0;    
-
+    padding:0;
+    margin:1em 0;    
+    
     p {
-        width:80px;
-        margin:0 auto; padding:0;
-        border:1px solid $headColor;
+        @include inline-block();
+        margin:0 auto; padding:0 0.5em;
         text-align:center;
         background:white;
-        line-height:1.2em;
+        line-height:1em;
         padding-bottom:0.1em;
+
+        $url:"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSINCgkgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM6YT0iaHR0cDovL25zLmFkb2JlLmNvbS9BZG9iZVNWR1ZpZXdlckV4dGVuc2lvbnMvMy4wLyINCgkgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIxMDBweCIgaGVpZ2h0PSIxMDBweCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIG92ZXJmbG93PSJ2aXNpYmxlIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMDAgMTAwIg0KCSB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxkZWZzPg0KPC9kZWZzPg0KPGc+DQoJPHBhdGggZmlsbD0iIzAwMDAwMCIgZD0iTTk5LDF2OThIMVYxSDk5IE0xMDAsMEgwdjEwMGgxMDBWMEwxMDAsMHoiLz4NCjwvZz4NCjwvc3ZnPg0K";
+
+        $border:50% 50% 50% 50%;
+        border-color:orange;
+        border-style:double;
+        border-width:10px;
+        -moz-border-image:url($url) $border repeat;
+        -webkit-border-image:url($url) $border repeat;
+        border-image:url($url) $border repeat;        
+    }
+
+    .box_index & {
+        margin-top:0;
+        p {
+            padding:0;
+        }
     }
 }
 
+/* ----- NAME OF THE HTTPFLY ---- */
 .name {
-    display:none;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    line-height:1.1em;
+    margin-bottom:0.5em;
 }
 
-.latin {display:none}
-.tweet-this {display:none}
+/* ----- LATIN TRANSLATION ---- */
+.latin {
+    font-size:1.25em;
+    font-style:italic;
+    margin-bottom:1em;
+    letter-spacing:0.05em;
+    line-height:1.1em;
+}
+
+.desc {
+
+}
+
+/* ----- TWEET THIS ICON AND TEXT ---- */
+
+$twitter-size: 30px;
+
+.tweet-this {
+    font-weight:400;
+    display:block;
+    width:200px;
+    text-align:center;
+    margin:2em auto 3em;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:inherit;
+    font-size:14px;
+    letter-spacing:0.1em;
+    padding:0.5em;
+    @include border-radius(0.25em);
+
+    .twitter-icon {
+    
+        width:$twitter-size;
+        height:$twitter-size;
+        margin:0 auto;    
+
+        svg {
+            width:100%;
+            height:100%;
+            circle {fill:$bgColor;}
+            path {fill:$textColor;}
+        }
+    }
+
+    &:hover {
+        background-color:$bgColor;
+
+        .twitter-icon svg {
+            path {fill:$darkColor;}
+            circle {fill:white;}
+        }
+    }
+}
+

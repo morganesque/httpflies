@@ -1,0 +1,95 @@
+
+.box_page {
+    width:100%;
+    margin:0;
+
+    // @include grid-media-query(desk) { max-width:960px; margin:auto }
+}
+
+.box_case {
+    @extend .grid;
+    @extend .grid--center;
+    display:none;
+}
+
+.box_case .box_httpfly {  
+    @extend .grid__item;
+    @extend .desk--three-fifths;    
+}
+
+.box_case .box_details { 
+    @extend .grid__item;
+    @extend .desk--two-fifths; 
+
+    @include grid-media-query(desk) { border-left:1px solid $bgColor; }
+}
+
+.box_index {
+
+    text-align:center;
+    // display:none;
+
+    .box_httpfly {
+
+        @include inline-block();
+
+        // background-color:#eee;
+        $biggest: 280px;                    
+        width:$biggest;
+        // &.w2 { width:($biggest * 1/2) }     // 160 = 320*(1/2)
+        &.w2 { width:($biggest * 3/4) }     
+        &.w3 { width:($biggest * 7/8) }     
+        &.w4 { width:($biggest * 5/8) }     
+        position:relative;
+        overflow:visible;    
+
+        .inner {
+            margin:0;padding:1em;
+        }
+    }
+}
+
+.inner {
+    position:relative;
+    text-align:center;
+    padding:0 1em;
+
+    .box_httpfly & .cross {
+        position:absolute;
+        top:0;left:0;
+        width:100%;height:100%;
+        @include opacity(0.15);
+        background:transparent url(/svg/cross-hatch.png) repeat scroll top left;
+        pointer-events:none;
+    }
+
+    @include grid-media-query(desk)
+    {
+        margin:1em;padding:0;        
+    }
+}   
+
+.barnum {   
+
+    &:link,
+    &:visited {         
+        display:block;
+        position:relative;       
+        width:100%; 
+        height:200px;
+        // height:0;
+        // padding-bottom:84%;
+        overflow:visible;
+        text-decoration:none;
+
+        // svg {
+        //     position:absolute;
+        //     left:0;top:0;
+        // }
+        .box_case & {
+            height:440px;
+        }
+    }
+
+
+}

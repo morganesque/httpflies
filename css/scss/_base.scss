@@ -1,21 +1,34 @@
-
 @import "lib/normalize";
 @import "lib/typeplate";
+@import "lib/mymixins";
 
 $bgColor:#f4f5f6;
 $headColor:#d5d8de;
-$textColor:#919aa9;
+$midColor:#CFD2DB;
+$textColor:#A5B0C3;
+$darkColor: darken($textColor, 32);
 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 body {
-    font-weight:400;
+    font-weight:200;
+    letter-spacing:0.1em;
     color:$textColor;    
 }
 
 h1,h2,h3,h4,h5,h6 {
     color:$textColor;
-    font-weight:100;
+    font-weight:200;
+}
+
+a:link,
+a:visited {
+    color:$textColor;
+    text-decoration:none;
+}
+a:hover,
+a:active {
+    color:$darkColor;
 }
 
 #original {display:none}
@@ -27,4 +40,17 @@ h1,h2,h3,h4,h5,h6 {
 
 .nw {
     white-space:nowrap;
+}
+
+.small {
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+}
+
+footer {
+    a:link,
+    a:visited {
+        font-weight:400;
+    }
 }

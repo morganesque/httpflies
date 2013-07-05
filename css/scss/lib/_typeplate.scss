@@ -36,7 +36,7 @@ $line-height: 1.65;
 $font-size: 100; // percentage value (16 * 112.5% = 18px)
 $font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
 $measure: $font-base * $line-height;
-$font-family: Helvetica, Arial, serif;
+$font-family: Georgia, Helvetica, Arial, serif;
 $font-family-sans: sans-serif;
 $font-properties: $weight, $line-height, $font-size, $font-family;
 

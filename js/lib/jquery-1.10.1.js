@@ -1539,7 +1539,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 	// Support: IE<9
 	// Retrieving value should defer to defaultValue
 	support.input = assert(function( div ) {
-		div.innerHTML = "<input>";
+		div.innerHTML = "<input/>";
 		div.firstChild.setAttribute( "value", "" );
 		return div.firstChild.getAttribute( "value" ) === "";
 	});

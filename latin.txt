@@ -1,0 +1,77 @@
+100 Persevero
+101 Commuto procedendi
+102* Processui
+
+200 Callide
+201 Creati
+202 Acceptus
+203 Auctoritate notitia non-
+204 Non contenti
+205 Reset contenti
+206 Partialem contenti
+207* Multi status
+208* Iamque nuntiato
+226* Flexibus usi
+
+300 Multiplex electiones
+301 Movetur stabiliter
+302 Evestigatus
+303 Alias videre
+304 Non restringitur
+305 Uti proxy
+306* Commuto proxy
+307 Temporaria redirigo
+308* Permanentem redirigo
+
+400 Male petenti
+401 Non permisit
+402 Requiritur solveret
+403 Interdictum
+404 Non est inventus
+405 Modus non permisit
+406 Nee placens
+407 Requiritur procuratorem authenticas
+408 Request impleti
+409 Proelium
+410 Abiit
+411 Requiritur longitudo
+412 Deficio precondicionis
+413 Sarcina maior
+414 URI diutius
+415 Media suffulta
+416 Teli non potest
+417 Exspectatióne defecit
+418* Ego teapot
+419* Authenticas impleti
+422* impossibile entitatem
+423* Clausum
+424* Defecit dependentiam 
+426 Requiritur emendationem
+428* Conditio requiritur 
+429* Etiam multis postulationibus
+431* Postulavit titulis nimis grandes
+444* Qua nihil respondente
+449* Iterum experiri
+450* Saeptum hoc parentum imperium
+451* Abscondita legalis ratio
+451* 
+494* Postulavit titulis nimis grandes
+495* Certificatorium errore
+496* non certificatorium
+497* HTTP ad HTTPS
+499* clausum precibus client
+
+500 Internum apparatus errore
+501 Non compleverit
+502 Malum portae
+503 Servitio clauduntur
+504 Porta cessarunt
+505 Version non sustinetur
+506 Vel etiam licetur
+507 Insufficiens repono
+508 Ansa deprehendi
+509 Terminus peregrinatione excederet
+510 Non extendi
+511 Requiritur retiacula authenticas
+598 Resoluto errorem retiacula
+599 Resoluto errorem retiacula nexu

@@ -417,7 +417,7 @@ pre code {
  *
  */
 html {
-  font: normal 100%/1.65 Helvetica, Arial, serif;
+  font: normal 100%/1.65 Georgia, Helvetica, Arial, serif;
 }
 
 body {
@@ -730,13 +730,25 @@ h6 {
 }
 
 body {
-  font-weight: 400;
-  color: #919aa9;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  color: #a5b0c3;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #919aa9;
-  font-weight: 100;
+  color: #a5b0c3;
+  font-weight: 200;
+}
+
+a:link,
+a:visited {
+  color: #a5b0c3;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  color: #4f5d76;
 }
 
 #original {
@@ -750,6 +762,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .nw {
   white-space: nowrap;
+}
+
+.small {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+footer a:link,
+footer a:visited {
+  font-weight: 400;
 }
 
 /*------------------------------------*\
@@ -880,7 +903,7 @@ h1, h2, h3, h4, h5, h6 {
  * 2. Remove any margins and paddings that might affect the grid system.
  * 3. Apply a negative `margin-left` to negate the columns’ gutters.
  */
-.grid {
+.grid, .box_case {
   list-style: none;
   /* [1] */
   margin: 0;
@@ -898,7 +921,7 @@ h1, h2, h3, h4, h5, h6 {
  * 4. Full-width unless told to behave otherwise.
  * 5. Required to combine fluid widths and fixed gutters.
  */
-.grid__item {
+.grid__item, .box_case .box_httpfly, .box_case .box_details {
   display: inline-block;
   /* [1] */
   padding-left: 24px;
@@ -923,7 +946,7 @@ h1, h2, h3, h4, h5, h6 {
   direction: rtl;
   text-align: left;
 }
-.grid--rev > .grid__item {
+.grid--rev > .grid__item, .box_case .grid--rev > .box_httpfly, .box_case .grid--rev > .box_details {
   direction: ltr;
   text-align: left;
 }
@@ -935,7 +958,7 @@ h1, h2, h3, h4, h5, h6 {
 .grid--full {
   margin-left: 0;
 }
-.grid--full > .grid__item {
+.grid--full > .grid__item, .box_case .grid--full > .box_httpfly, .box_case .grid--full > .box_details {
   padding-left: 0;
 }
 
@@ -945,7 +968,7 @@ h1, h2, h3, h4, h5, h6 {
 .grid--right {
   text-align: right;
 }
-.grid--right > .grid__item {
+.grid--right > .grid__item, .box_case .grid--right > .box_httpfly, .box_case .grid--right > .box_details {
   text-align: left;
 }
 
@@ -953,10 +976,10 @@ h1, h2, h3, h4, h5, h6 {
  * Centered grids align grid items centrally without needing to use push or pull
  * classes. Extends `.grid`.
  */
-.grid--center {
+.grid--center, .box_case {
   text-align: center;
 }
-.grid--center > .grid__item {
+.grid--center > .grid__item, .box_case > .grid__item, .box_case .grid--center > .box_httpfly, .box_case > .box_httpfly, .box_case .grid--center > .box_details, .box_case > .box_details {
   text-align: left;
 }
 
@@ -964,11 +987,11 @@ h1, h2, h3, h4, h5, h6 {
  * Align grid cells vertically (`.grid--middle` or `.grid--bottom`). Extends
  * `.grid`.
  */
-.grid--middle > .grid__item {
+.grid--middle > .grid__item, .box_case .grid--middle > .box_httpfly, .box_case .grid--middle > .box_details {
   vertical-align: middle;
 }
 
-.grid--bottom > .grid__item {
+.grid--bottom > .grid__item, .box_case .grid--bottom > .box_httpfly, .box_case .grid--bottom > .box_details {
   vertical-align: bottom;
 }
 
@@ -978,7 +1001,7 @@ h1, h2, h3, h4, h5, h6 {
 .grid--narrow {
   margin-left: -12px;
 }
-.grid--narrow > .grid__item {
+.grid--narrow > .grid__item, .box_case .grid--narrow > .box_httpfly, .box_case .grid--narrow > .box_details {
   padding-left: 12px;
 }
 
@@ -988,7 +1011,7 @@ h1, h2, h3, h4, h5, h6 {
 .grid--wide {
   margin-left: -48px;
 }
-.grid--wide > .grid__item {
+.grid--wide > .grid__item, .box_case .grid--wide > .box_httpfly, .box_case .grid--wide > .box_details {
   padding-left: 48px;
 }
 
@@ -1543,11 +1566,11 @@ h1, h2, h3, h4, h5, h6 {
     width: 20%;
   }
 
-  .desk--two-fifths, .desk--four-tenths {
+  .desk--two-fifths, .desk--four-tenths, .box_case .box_details {
     width: 40%;
   }
 
-  .desk--three-fifths, .desk--six-tenths {
+  .desk--three-fifths, .desk--six-tenths, .box_case .box_httpfly {
     width: 60%;
   }
 
@@ -1635,120 +1658,300 @@ h1, h2, h3, h4, h5, h6 {
 /**
  * Pull classes, to move grid items back to the left by certain amounts.
  */
-.header {
-  text-align: center;
-  background-color: #f4f5f6;
-  padding: 1em 0;
-}
-.header h1 {
-  letter-spacing: 0.19em;
-}
-.header .logo {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto;
-  position: relative;
-  margin-bottom: 1em;
-}
-.header .logo .svg {
-  position: relative;
-  background-image: url(../svg/logo.svg);
-  background-size: cover;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
-}
-.header .logo .col {
-  position: absolute;
-  width: 38px;
-  height: 38px;
-  left: 21px;
-  top: 21px;
-  background-color: #919aa9;
-  -webkit-animation-duration: 10s;
-  -webkit-animation-name: logopulse;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-delay: 1s;
-  -webkit-animation-direction: normal;
-  -webkit-animation-fill-mode: forward;
-}
-.header .line {
+/*
+    Tiny modules that don't need splitting out.
+*/
+/* ----- THE HR LINE ---- */
+.line {
   background-color: #d5d8de;
   width: 6em;
   height: 1px;
-  margin: 0 auto;
+  margin: 0 auto 0.5em;
   border: none;
+}
+
+/* ----- NUMBER LABEL ---- */
+.label {
+  width: 100%;
+  padding: 0;
+  margin: 1em 0;
+}
+.label p {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  margin: 0 auto;
+  padding: 0 0.5em;
+  text-align: center;
+  background: white;
+  line-height: 1em;
+  padding-bottom: 0.1em;
+  border-color: orange;
+  border-style: double;
+  border-width: 10px;
+  -moz-border-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSINCgkgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM6YT0iaHR0cDovL25zLmFkb2JlLmNvbS9BZG9iZVNWR1ZpZXdlckV4dGVuc2lvbnMvMy4wLyINCgkgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIxMDBweCIgaGVpZ2h0PSIxMDBweCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIG92ZXJmbG93PSJ2aXNpYmxlIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMDAgMTAwIg0KCSB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxkZWZzPg0KPC9kZWZzPg0KPGc+DQoJPHBhdGggZmlsbD0iIzAwMDAwMCIgZD0iTTk5LDF2OThIMVYxSDk5IE0xMDAsMEgwdjEwMGgxMDBWMEwxMDAsMHoiLz4NCjwvZz4NCjwvc3ZnPg0K") 50% 50% 50% 50% repeat;
+  -webkit-border-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSINCgkgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM6YT0iaHR0cDovL25zLmFkb2JlLmNvbS9BZG9iZVNWR1ZpZXdlckV4dGVuc2lvbnMvMy4wLyINCgkgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIxMDBweCIgaGVpZ2h0PSIxMDBweCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIG92ZXJmbG93PSJ2aXNpYmxlIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMDAgMTAwIg0KCSB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxkZWZzPg0KPC9kZWZzPg0KPGc+DQoJPHBhdGggZmlsbD0iIzAwMDAwMCIgZD0iTTk5LDF2OThIMVYxSDk5IE0xMDAsMEgwdjEwMGgxMDBWMEwxMDAsMHoiLz4NCjwvZz4NCjwvc3ZnPg0K") 50% 50% 50% 50% repeat;
+  border-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSINCgkgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM6YT0iaHR0cDovL25zLmFkb2JlLmNvbS9BZG9iZVNWR1ZpZXdlckV4dGVuc2lvbnMvMy4wLyINCgkgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIxMDBweCIgaGVpZ2h0PSIxMDBweCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIG92ZXJmbG93PSJ2aXNpYmxlIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMDAgMTAwIg0KCSB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxkZWZzPg0KPC9kZWZzPg0KPGc+DQoJPHBhdGggZmlsbD0iIzAwMDAwMCIgZD0iTTk5LDF2OThIMVYxSDk5IE0xMDAsMEgwdjEwMGgxMDBWMEwxMDAsMHoiLz4NCjwvZz4NCjwvc3ZnPg0K") 50% 50% 50% 50% repeat;
+}
+.box_index .label {
+  margin-top: 0;
+}
+.box_index .label p {
+  padding: 0;
+}
+
+/* ----- NAME OF THE HTTPFLY ---- */
+.name {
+  text-transform: uppercase;
+  font-size: 1.5em;
+  line-height: 1.1em;
   margin-bottom: 0.5em;
 }
-.header .sub {
+
+/* ----- LATIN TRANSLATION ---- */
+.latin {
+  font-size: 1.25em;
+  font-style: italic;
+  margin-bottom: 1em;
+  letter-spacing: 0.05em;
+  line-height: 1.1em;
+}
+
+/* ----- TWEET THIS ICON AND TEXT ---- */
+.tweet-this {
+  font-weight: 400;
+  display: block;
+  width: 200px;
+  text-align: center;
+  margin: 2em auto 3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  padding: 0.5em;
+  -webkit-border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  -ms-border-radius: 0.25em;
+  -o-border-radius: 0.25em;
+  border-radius: 0.25em;
+}
+.tweet-this .twitter-icon {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+}
+.tweet-this .twitter-icon svg {
+  width: 100%;
+  height: 100%;
+}
+.tweet-this .twitter-icon svg circle {
+  fill: #f4f5f6;
+}
+.tweet-this .twitter-icon svg path {
+  fill: #a5b0c3;
+}
+.tweet-this:hover {
+  background-color: #f4f5f6;
+}
+.tweet-this:hover .twitter-icon svg path {
+  fill: #4f5d76;
+}
+.tweet-this:hover .twitter-icon svg circle {
+  fill: white;
+}
+
+.box_footer,
+.box_header {
+  text-align: center;
+  background-color: #f4f5f6;
+  padding: 1em 0 0.5em;
+}
+
+.box_header h1 {
+  letter-spacing: 0.19em;
+  margin-bottom: 0.4em;
+}
+.box_header .sub {
   text-transform: uppercase;
   margin: 0;
   letter-spacing: 0.13em;
 }
+.box_header .line {
+  margin: 0 auto 0.5em;
+}
+
+.logo {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 0.5em;
+  cursor: pointer;
+}
+.logo svg {
+  width: 100%;
+  height: 100%;
+}
+.logo svg path.circle {
+  fill: white;
+}
+.box_header .logo svg path.butterfly {
+  fill: #f4f5f6;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-name: logopulse;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-duration: 3s;
+  -moz-animation-name: logopulse;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-delay: 0s;
+  -moz-animation-direction: normal;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-duration: 3s;
+  -o-animation-name: logopulse;
+  -o-animation-iteration-count: 1;
+  -o-animation-delay: 0s;
+  -o-animation-direction: normal;
+  -o-animation-fill-mode: forwards;
+  animation-duration: 3s;
+  animation-name: logopulse;
+  animation-iteration-count: 1;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+.box_footer .logo {
+  width: 40px;
+  height: 40px;
+}
+.box_footer .logo svg path.circle {
+  fill: #f4f5f6;
+}
+.box_footer .logo svg path.butterfly {
+  fill: #cfd2db;
+}
 
 @-webkit-keyframes logopulse {
   0% {
-    background-color: white;
+    fill: white;
   }
 
   100% {
-    background-color: #919aa9;
+    fill: #f4f5f6;
   }
 }
 
-.container {
-  position: relative;
-  margin: 2em auto;
-  width: 90%;
+@-moz-keyframes logopulse {
+  0% {
+    fill: white;
+  }
+
+  100% {
+    fill: #f4f5f6;
+  }
 }
 
-.box {
+@-o-keyframes logopulse {
+  0% {
+    fill: white;
+  }
+
+  100% {
+    fill: #f4f5f6;
+  }
+}
+
+@keyframes logopulse {
+  0% {
+    fill: white;
+  }
+
+  100% {
+    fill: #f4f5f6;
+  }
+}
+
+.box_page {
+  width: 100%;
+  margin: 0;
+}
+
+.box_case {
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  .box_case .box_details {
+    border-left: 1px solid #f4f5f6;
+  }
+}
+
+.box_index {
+  text-align: center;
+}
+.box_index .box_httpfly {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  width: 280px;
   position: relative;
-  width: 320px;
-  height: 200px;
   overflow: visible;
-  padding: 2em;
 }
-.box.w2 {
-  width: 160px;
+.box_index .box_httpfly.w2 {
+  width: 210px;
 }
-.box.w3 {
-  width: 240px;
+.box_index .box_httpfly.w3 {
+  width: 245px;
 }
-.box.w4 {
-  width: 266.66667px;
+.box_index .box_httpfly.w4 {
+  width: 175px;
+}
+.box_index .box_httpfly .inner {
+  margin: 0;
+  padding: 1em;
+}
+
+.inner {
+  position: relative;
+  text-align: center;
+  padding: 0 1em;
+}
+.box_httpfly .inner .cross {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=15);
+  opacity: 0.15;
+  background: transparent url(/svg/cross-hatch.png) repeat scroll top left;
+  pointer-events: none;
+}
+@media only screen and (min-width: 1024px) {
+  .inner {
+    margin: 1em;
+    padding: 0;
+  }
 }
 
 .barnum:link, .barnum:visited {
-  position: relative;
   display: block;
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: visible;
   text-decoration: none;
 }
-
-.label {
-  font-weight: 100;
-  width: 100%;
-  padding: 0;
-}
-.label p {
-  width: 80px;
-  margin: 0 auto;
-  padding: 0;
-  border: 1px solid #d5d8de;
-  text-align: center;
-  background: white;
-  line-height: 1.2em;
-  padding-bottom: 0.1em;
-}
-
-.name {
-  display: none;
-}
-
-.latin {
-  display: none;
-}
-
-.tweet-this {
-  display: none;
+.box_case .barnum:link, .box_case .barnum:visited {
+  height: 440px;
 }
