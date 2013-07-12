@@ -99,9 +99,9 @@ $twitter-size: 30px;
 
     &:hover {
         background-color:$bgColor;
-
+        
         .twitter-icon svg {
-            path {fill:$darkColor;}
+            // path {fill:$darkColor;}
             circle {fill:white;}
         }
     }

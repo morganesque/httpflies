@@ -1,5 +1,5 @@
-﻿/* http://keith-wood.name/svg.html
-   SVG for jQuery v1.4.5.
+﻿/*! SVG for jQuery v1.4.5. http://keith-wood.name/svg.html */
+/*   SVG for jQuery v1.4.5.
    Written by Keith Wood (kbwood{at}iinet.com.au) August 2007.
    Dual licensed under the GPL (http://dev.jquery.com/browser/trunk/jquery/GPL-LICENSE.txt) and 
    MIT (http://dev.jquery.com/browser/trunk/jquery/MIT-LICENSE.txt) licenses. 
@@ -1080,7 +1080,9 @@ $.extend(SVGWrapper.prototype, {
 			svgDoc = node.nodeValue;
 		}
 		else if (node.nodeType == 4) { // CDATA
-			svgDoc = '<![CDATA[' + node.nodeValue + ']]>';
+			var sol = 'CDATA';
+			var sil = ']>';
+			svgDoc = '<!['+sol+'[' + node.nodeValue + ']'+sil;
 		}
 		else { // Element
 			svgDoc = '<' + node.nodeName;

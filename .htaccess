@@ -42,6 +42,15 @@ FileETag none
 # 404 page 
 ErrorDocument 404 /404.html
 
+<IfModule mod_gzip.c>  
+  Header add X-Enabled mod_gzip  
+</IfModule>  
+<IfModule mod_deflate.c>  
+  Header add X-Enabled mod_deflate  
+</IfModule>
+
+AddOutputFilterByType DEFLATE text/xml 
+
 #
 #   WordPress - redirect everything (that doesn’t exist) to index.php
 #

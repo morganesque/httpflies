@@ -9,8 +9,8 @@
     xmlns:xlink="http://www.w3.org/1999/xlink" 
     id="original"
     version="1.0" 
-    viewBox="0 0 333 280" 
-    preserveAspectRatio="xMidYMin meet"    
+    viewBox="0 0 414 340" 
+    preserveAspectRatio="xMidYMid meet"    
     >
     <defs>
         <linearGradient class="back-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -25,15 +25,12 @@
             <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1"></stop>
             <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1"></stop>
         </linearGradient>
-        <pattern id="crosshatch" x="0" y="0" patternUnits="userSpaceOnUse" width="6" height="6">
-          <image x="0" y="0" xlink:href="/svg/cross-hatch.png" width="6" height="6" />
-        </pattern>
     </defs>
 
-    <g class="butterfly">
+    <g class="butterfly" transform="translate(0 0)">
     <?php include ('all-the-wings.svg'); ?>
     </g>
 
-    <rect class="gone" x="0" y="0" width="100%" height="100%" fill="none" stroke="black"/>  
+    <rect class="debug" x="0" y="0" width="100%" height="100%" fill="none" stroke="black"/>  
 
 </svg>
