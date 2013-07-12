@@ -1,15 +1,9 @@
-# humanstxt.org/
-# The humans responsible & technology colophon
+  _  _ _____ _____ ___  __ _ _        
+ | || |_   _|_   _| _ \/ _| (_)___ ___
+ | __ | | |   | | |  _/  _| | / -_|_-<
+ |_||_| |_|   |_| |_| |_| |_|_\___/__/
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
-
-# THANKS
-
-    <name>
-
-# TECHNOLOGY COLOPHON
-
-    HTML5, CSS3
-    Normalize.css, jQuery, Modernizr
+    Dean Vipond -- Design & UX -- @deanvipond
+    Tom Morgan -- UX & Front-end dev -- @morganesque

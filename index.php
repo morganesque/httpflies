@@ -23,10 +23,10 @@ header('Content-Type: text/xml'); ?>
     <meta name="DC.creator" content="Tom Morgan &amp; Dean Vipond" />    
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />    
     <meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />    
     <link rel="image_src" href="" />
     <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
     <?php include('google-fonts.php'); ?>
     <style type="text/css">
     <![CDATA[

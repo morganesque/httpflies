@@ -13,6 +13,8 @@ for (var i = data.length - 1; i >= 0; i--)
     {
         data.splice(i,1);
         // console.log('removing');
+    } else {
+        data[i].hue = (i/data.length)*360;
     }
 }
 

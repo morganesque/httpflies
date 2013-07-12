@@ -4,8 +4,8 @@
 $(document).ready(function()
 {    
     $('rect.debug').remove(); // hide the degbugging rectangle (for now).
-    $('.box_case_container').hide(); // hide the         
-
+    $('.box_case_container').hide(); // hide the single httpfly container.            
+    
     var Color = net.brehaut.Color;                      // easier to use reference.
     var types = ['five','four','three','two','one'];    // types of butterfly wing.
     var huts = 0;                                       // to count the httpflies.
@@ -13,7 +13,7 @@ $(document).ready(function()
     /*
         Factory (haha!) function for creating httpflies. 
     */
-    function createHttpfly(code)
+    function createHttpfly(code,it)
     {
         var newHttpfly = $('#original').clone().attr('id',code);         // clone the original SVG data.
         var butterfly = newHttpfly.find('.butterfly'); 
@@ -31,6 +31,7 @@ $(document).ready(function()
         // how far to the right to shift the new wings.
         trans = 414;
 
+        // actually filter and modify the shapes needed for the httpfly.
         $(types).each(function(i,val)
         {
             if (val == chosen)
@@ -52,45 +53,33 @@ $(document).ready(function()
                     .attr('transform','scale(-1,1),translate(-'+trans+',0)');
 
                 // create a random colour.
-                var backColors = {};
-                backColors.colours = [];
+                var theColours = makeNewColours(data[it].hue);
 
-                backColors.hue = Math.floor(Math.random()*360);
-                backColors.colours[0] = Color({hue:backColors.hue, saturation:0.9, lightness:0.45});    // the first gradient colour.
-                backColors.colours[1] = backColors.colours[0].shiftHue(45);                            // the other gradient colour.
-
-                // grab the gradient.
+                // apply the back gradient.
                 var grad = newHttpfly.find('.back-gradient');
-                // grab the stops.
                 var stops = $(grad).find('stop'); 
-                // make sure the new gradient gets a unique id.
                 $(grad).attr('id','back-grad'+huts);
-                // change the gradient.
-                $(stops[1]).attr('style','stop-color:'+backColors.colours[0].toCSS()+';stop-opacity:1');
-                $(stops[0]).attr('style','stop-color:'+backColors.colours[1].toCSS()+';stop-opacity:1');
-
-                // apply the gradient to the background wing.
-                wings.find('.back').attr('fill','url(#back-grad'+huts+')');
+                $(stops[1]).attr('style','stop-color:'+theColours[0].toCSS()+';stop-opacity:1');
+                $(stops[0]).attr('style','stop-color:'+theColours[1].toCSS()+';stop-opacity:1');
+                wings.find('.back').attr('fill','url(#back-grad'+huts+')');                
                 
+                // apply the wing gradient.
                 grad = newHttpfly.find('.wing-gradient');            
                 stops = $(grad).find('stop'); 
-                $(grad).attr('id','wing-grad'+huts);
-                backColors.colours[2] = backColors.colours[0].shiftHue(-90).darkenByAmount(0.2);
-                $(stops[1]).attr('style','stop-color:'+backColors.colours[2].toCSS()+';stop-opacity:1');
-                backColors.colours[3] = backColors.colours[2].darkenByAmount(0.2);
-                $(stops[0]).attr('style','stop-color:'+backColors.colours[3].toCSS()+';stop-opacity:1');
+                $(grad).attr('id','wing-grad'+huts);                
+                $(stops[1]).attr('style','stop-color:'+theColours[2].toCSS()+';stop-opacity:1');                
+                $(stops[0]).attr('style','stop-color:'+theColours[3].toCSS()+';stop-opacity:1');
                 wings.find('.front').attr({
                     'fill': 'url(#wing-grad'+huts+')'
                     ,'opacity': 0.76
                 });
 
+                // apply the body gradient.
                 grad = newHttpfly.find('.body-gradient');            
                 stops = $(grad).find('stop'); 
-                $(grad).attr('id','body-grad'+huts);
-                backColors.colours[4] = backColors.colours[0].shiftHue(-180);
-                $(stops[1]).attr('style','stop-color:'+backColors.colours[4].toCSS()+';stop-opacity:1');
-                backColors.colours[5] = backColors.colours[4].darkenByAmount(0.5);
-                $(stops[0]).attr('style','stop-color:'+backColors.colours[5].toCSS()+';stop-opacity:1');
+                $(grad).attr('id','body-grad'+huts);                
+                $(stops[1]).attr('style','stop-color:'+theColours[4].toCSS()+';stop-opacity:1');                
+                $(stops[0]).attr('style','stop-color:'+theColours[5].toCSS()+';stop-opacity:1');
                 newHttpfly.find('.the_body .body-shape').attr({
                     'fill': 'url(#body-grad'+huts+')'
                 });    
@@ -106,6 +95,25 @@ $(document).ready(function()
         return newHttpfly;
     }
 
+    var makeNewColours = function(hue)
+    {
+        var colours = [];
+        // the first gradient colour (center of background)
+        colours[0] = Color({hue:hue, saturation:0.9, lightness:0.45});    
+        // the second gradient colour (outer background)
+        colours[1] = colours[0].shiftHue((360/data.length)*5);                            
+        // top color of front wing gradient
+        colours[2] = colours[0].shiftHue(-45).darkenByAmount(0.2);
+        // bottom colour of front wing gradient.
+        colours[3] = colours[2].darkenByAmount(0.2);
+        // bottom colour of body gradient.
+        colours[4] = colours[0].shiftHue(-180);
+        // top color of body gradient.
+        colours[5] = colours[4].darkenByAmount(0.5);
+
+        return colours;
+    }
+
     var boxIndex = $('.box_index');
 
     var createAllTheHttpflies = function()
@@ -118,14 +126,14 @@ $(document).ready(function()
             hut.attr('id','');
 
             var b = hut.find('.barnum');     // grab the container for the httpfly.con
-            var h = createHttpfly(code);
+            var h = createHttpfly(code,i);
             b.prepend(h);
             // $(h).appendTo(b);
             b.attr('href','#'+code);
 
             boxIndex.append(hut);
 
-            var r = Math.random() * 3;
+            var r = i%3;
                  if (r < 1) $(hut).addClass('w2');
             else if (r < 2) $(hut).addClass('w3');
             // else if (r < 3) $(hut).addClass('w4');
@@ -140,10 +148,8 @@ $(document).ready(function()
 
     createAllTheHttpflies();
 
-    /*
-        Get rid of the placeholder HTML I put in there.
-    */
-    $('#starter').remove();
+    $('#starter').remove(); // Get rid of the placeholder HTML I put in there.
+
     /*
         What to do when a httpfly is clicked.
     */
@@ -189,8 +195,8 @@ $(document).ready(function()
     {
         e.preventDefault();
         $('.box_index').show();
-        $('.box_case_container').hide();        
-        pushHandle.httpfly.empty();
+        $('.box_case_container').hide();                
+        pushHandle.httpfly.find('svg').remove();    // got to make sure there's only one showing or the unique ID's don't work.
         history.pushState({number:null}, '', '/');        
         ga('send', 'pageview', '/');
     };
