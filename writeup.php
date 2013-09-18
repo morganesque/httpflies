@@ -40,7 +40,7 @@ header('Content-Type: text/xml'); ?>
 <body>       
     <header class="box_header">
         <?php /* <div class="logo"><a href="#" id="index-link"><?php include('./svg/logo.svg'); ?></a></div> */ ?>
-        <a href="/" class="logo"><?php include('./svg/logo.svg'); ?></a>
+        <div class="logo"><?php include('./svg/logo.svg'); ?></div>
         <h1 class="beta large-text">httpflies</h1>
         <hr class="line"/>
         <p class="sub">A Miscellany Of <span class="nw">Http Status Codes</span></p>
