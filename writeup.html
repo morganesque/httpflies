@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" xmlns="http://www.w3.org/1999/xhtml"><!--<![endif]-->
+<head>
+    <title>HTTPFlies</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />    
+    <meta name="title" content="HTTPFlies - Some Words About The Thing" />
+    <meta name="description" content="A brief description of the project, process and technologies we used." />	
+    <meta name="google-site-verification" content="" />
+    <meta name="author" content="Tom Morgan &amp; Dean Vipond" />
+    <meta name="Copyright" content="Copyright Tom Morgan 2011. All Rights Reserved." />
+    <meta name="DC.title" content="HTTPFlies - Some Words About The Thing" />
+    <meta name="DC.creator" content="Tom Morgan &amp; Dean Vipond" />    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />    
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />    
+    <link rel="image_src" href="" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+        body {font-family: 'Lato', Georgia, Arial, sans-serif;}
+    @charset "UTF-8";/* normalize.css v2.1.2 | MIT License | git.io/normalize */article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:0.67em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em}pre{white-space:pre-wrap}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}@font-face{font-family:"Ampersand";src:local("Georgia"),local("Garamond"),local("Palatino"),local("Book Antiqua");unicode-range:U+0026}@font-face{font-family:"Ampersand";src:local("Georgia");unicode-range:U+270C}body{word-wrap:break-word}pre code{word-wrap:normal}html{font:normal 100%/1.65 Georgia,Helvetica,Arial,serif}body{-webkit-hyphens:auto;-moz-hyphens:auto;-ms-hyphens:auto;-o-hyphens:auto;hyphens:auto;color:#444}h1,h2,h3,h4,h5,h6{text-rendering:optimizeLegibility;line-height:1;margin-top:0}.tera{font-size:72px;font-size:4.5rem;margin-bottom:0.36667rem}.giga{font-size:54px;font-size:3.375rem;margin-bottom:0.48889rem}.mega{font-size:48px;font-size:3rem;margin-bottom:0.55rem}.alpha,h1{font-size:36px;font-size:2.25rem;margin-bottom:0.73333rem}.beta,h2{font-size:32px;font-size:2rem;margin-bottom:0.825rem}.gamma,h3{font-size:24px;font-size:1.5rem;margin-bottom:1.1rem}.delta,h4{font-size:21.33px;font-size:1.33313rem;margin-bottom:1.23769rem}.epsilon,h5{font-size:16px;font-size:1rem;margin-bottom:1.65rem}.zeta,h6{font-size:14.22px;font-size:0.88875rem;margin-bottom:1.85654rem}p{margin:0 0 1.5em}p+p{text-indent:1.5em;margin-top:-1.5em}abbr,acronym,blockquote,code,dir,kbd,listing,plaintext,q,samp,tt,var,xmp{-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-o-hyphens:none;hyphens:none}pre code{white-space:-moz-pre-wrap;white-space:pre-wrap}pre{white-space:pre}code{white-space:pre;font-family:monospace}abbr{font-variant:small-caps;font-weight:600;text-transform:lowercase;color:gray}abbr:hover{cursor:help}h1,h2,h3,h4,h5,h6{color:#222}.lining dt,.lining dd{display:inline;margin:0}.lining dt+dt:before,.lining dd+dt:before{content:"\A";white-space:pre}.lining dd+dd:before{content:", "}.lining dd:before{content:": ";margin-left:-0.2rem}.dictionary-style dt{display:inline;counter-reset:definitions}.dictionary-style dt+dt:before{content:", ";margin-left:-0.2rem}.dictionary-style dd{display:block;counter-increment:definitions}.dictionary-style dd:before{content:counter(definitions, decimal) ". "}.stats-tabs{padding:0}.stats-tabs li{display:inline-block;margin:0 0.625rem 0 0;padding:0 0.625rem 0 0;border-right:0.125rem solid #ccc}.stats-tabs li:last-child{margin:0;padding:0;border:none}.stats-tabs li a{display:inline-block;font-size:1.5rem;font-weight:bold}.stats-tabs li a b{display:block;margin:0.125rem 0 0 0;font-size:0.875rem;font-weight:normal}.pull-quote{position:relative;padding:1em}.pull-quote:before,.pull-quote:after{height:1em;opacity:0.15;position:absolute;font-size:4em}.pull-quote:before{content:'“';top:0;left:0}.pull-quote:after{content:'”';bottom:0;right:0}*{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}body{font-weight:200;letter-spacing:0.1em;color:#a5b0c3}h1,h2,h3,h4,h5,h6{color:#a5b0c3;font-weight:200}a:link,a:visited{color:#a5b0c3;text-decoration:none}a:hover,a:active{color:#4f5d76}#original{display:none}.large-text{text-transform:uppercase;color:#d5d8de}.nw{white-space:nowrap}.small{font-size:12px;text-transform:uppercase;letter-spacing:0.1em}footer a:link,footer a:visited{font-weight:400}.grid{list-style:none;margin:0;padding:0;margin-left:-24px}.grid__item{display:inline-block;padding-left:24px;vertical-align:top;width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.grid--rev{direction:rtl;text-align:left}.grid--rev>.grid__item{direction:ltr;text-align:left}.grid--full{margin-left:0}.grid--full>.grid__item{padding-left:0}.grid--right{text-align:right}.grid--right>.grid__item{text-align:left}.grid--center{text-align:center}.grid--center>.grid__item{text-align:left}.grid--middle>.grid__item{vertical-align:middle}.grid--bottom>.grid__item{vertical-align:bottom}.grid--narrow{margin-left:-12px}.grid--narrow>.grid__item{padding-left:12px}.grid--wide{margin-left:-48px}.grid--wide>.grid__item{padding-left:48px}.one-whole{width:100%}.one-half,.two-quarters,.three-sixths,.four-eighths,.five-tenths,.six-twelfths{width:50%}.one-third,.two-sixths,.four-twelfths{width:33.333%}.two-thirds,.four-sixths,.eight-twelfths{width:66.666%}.one-quarter,.two-eighths,.three-twelfths{width:25%}.three-quarters,.six-eighths,.nine-twelfths{width:75%}.one-fifth,.two-tenths{width:20%}.two-fifths,.four-tenths{width:40%}.three-fifths,.six-tenths{width:60%}.four-fifths,.eight-tenths{width:80%}.one-sixth,.two-twelfths{width:16.666%}.five-sixths,.ten-twelfths{width:83.333%}.one-eighth{width:12.5%}.three-eighths{width:37.5%}.five-eighths{width:62.5%}.seven-eighths{width:87.5%}.one-tenth{width:10%}.three-tenths{width:30%}.seven-tenths{width:70%}.nine-tenths{width:90%}.one-twelfth{width:8.333%}.five-twelfths{width:41.666%}.seven-twelfths{width:58.333%}.eleven-twelfths{width:91.666%}@media only screen and (max-width: 480px){.palm--one-whole{width:100%}.palm--one-half,.palm--two-quarters,.palm--three-sixths,.palm--four-eighths,.palm--five-tenths,.palm--six-twelfths{width:50%}.palm--one-third,.palm--two-sixths,.palm--four-twelfths{width:33.333%}.palm--two-thirds,.palm--four-sixths,.palm--eight-twelfths{width:66.666%}.palm--one-quarter,.palm--two-eighths,.palm--three-twelfths{width:25%}.palm--three-quarters,.palm--six-eighths,.palm--nine-twelfths{width:75%}.palm--one-fifth,.palm--two-tenths{width:20%}.palm--two-fifths,.palm--four-tenths{width:40%}.palm--three-fifths,.palm--six-tenths{width:60%}.palm--four-fifths,.palm--eight-tenths{width:80%}.palm--one-sixth,.palm--two-twelfths{width:16.666%}.palm--five-sixths,.palm--ten-twelfths{width:83.333%}.palm--one-eighth{width:12.5%}.palm--three-eighths{width:37.5%}.palm--five-eighths{width:62.5%}.palm--seven-eighths{width:87.5%}.palm--one-tenth{width:10%}.palm--three-tenths{width:30%}.palm--seven-tenths{width:70%}.palm--nine-tenths{width:90%}.palm--one-twelfth{width:8.333%}.palm--five-twelfths{width:41.666%}.palm--seven-twelfths{width:58.333%}.palm--eleven-twelfths{width:91.666%}}@media only screen and (min-width: 481px) and (max-width: 1023px){.lap--one-whole{width:100%}.lap--one-half,.lap--two-quarters,.lap--three-sixths,.lap--four-eighths,.lap--five-tenths,.lap--six-twelfths{width:50%}.lap--one-third,.lap--two-sixths,.lap--four-twelfths{width:33.333%}.lap--two-thirds,.lap--four-sixths,.lap--eight-twelfths{width:66.666%}.lap--one-quarter,.lap--two-eighths,.lap--three-twelfths{width:25%}.lap--three-quarters,.lap--six-eighths,.lap--nine-twelfths{width:75%}.lap--one-fifth,.lap--two-tenths{width:20%}.lap--two-fifths,.lap--four-tenths{width:40%}.lap--three-fifths,.lap--six-tenths{width:60%}.lap--four-fifths,.lap--eight-tenths{width:80%}.lap--one-sixth,.lap--two-twelfths{width:16.666%}.lap--five-sixths,.lap--ten-twelfths{width:83.333%}.lap--one-eighth{width:12.5%}.lap--three-eighths{width:37.5%}.lap--five-eighths{width:62.5%}.lap--seven-eighths{width:87.5%}.lap--one-tenth{width:10%}.lap--three-tenths{width:30%}.lap--seven-tenths{width:70%}.lap--nine-tenths{width:90%}.lap--one-twelfth{width:8.333%}.lap--five-twelfths{width:41.666%}.lap--seven-twelfths{width:58.333%}.lap--eleven-twelfths{width:91.666%}}@media only screen and (max-width: 1023px){.portable--one-whole{width:100%}.portable--one-half,.portable--two-quarters,.portable--three-sixths,.portable--four-eighths,.portable--five-tenths,.portable--six-twelfths{width:50%}.portable--one-third,.portable--two-sixths,.portable--four-twelfths{width:33.333%}.portable--two-thirds,.portable--four-sixths,.portable--eight-twelfths{width:66.666%}.portable--one-quarter,.portable--two-eighths,.portable--three-twelfths{width:25%}.portable--three-quarters,.portable--six-eighths,.portable--nine-twelfths{width:75%}.portable--one-fifth,.portable--two-tenths{width:20%}.portable--two-fifths,.portable--four-tenths{width:40%}.portable--three-fifths,.portable--six-tenths{width:60%}.portable--four-fifths,.portable--eight-tenths{width:80%}.portable--one-sixth,.portable--two-twelfths{width:16.666%}.portable--five-sixths,.portable--ten-twelfths{width:83.333%}.portable--one-eighth{width:12.5%}.portable--three-eighths{width:37.5%}.portable--five-eighths{width:62.5%}.portable--seven-eighths{width:87.5%}.portable--one-tenth{width:10%}.portable--three-tenths{width:30%}.portable--seven-tenths{width:70%}.portable--nine-tenths{width:90%}.portable--one-twelfth{width:8.333%}.portable--five-twelfths{width:41.666%}.portable--seven-twelfths{width:58.333%}.portable--eleven-twelfths{width:91.666%}}@media only screen and (min-width: 1024px){.desk--one-whole{width:100%}.desk--one-half,.desk--two-quarters,.desk--three-sixths,.desk--four-eighths,.desk--five-tenths,.desk--six-twelfths{width:50%}.desk--one-third,.desk--two-sixths,.desk--four-twelfths{width:33.333%}.desk--two-thirds,.desk--four-sixths,.desk--eight-twelfths{width:66.666%}.desk--one-quarter,.desk--two-eighths,.desk--three-twelfths{width:25%}.desk--three-quarters,.desk--six-eighths,.desk--nine-twelfths{width:75%}.desk--one-fifth,.desk--two-tenths{width:20%}.desk--two-fifths,.desk--four-tenths{width:40%}.desk--three-fifths,.desk--six-tenths{width:60%}.desk--four-fifths,.desk--eight-tenths{width:80%}.desk--one-sixth,.desk--two-twelfths{width:16.666%}.desk--five-sixths,.desk--ten-twelfths{width:83.333%}.desk--one-eighth{width:12.5%}.desk--three-eighths{width:37.5%}.desk--five-eighths{width:62.5%}.desk--seven-eighths{width:87.5%}.desk--one-tenth{width:10%}.desk--three-tenths{width:30%}.desk--seven-tenths{width:70%}.desk--nine-tenths{width:90%}.desk--one-twelfth{width:8.333%}.desk--five-twelfths{width:41.666%}.desk--seven-twelfths{width:58.333%}.desk--eleven-twelfths{width:91.666%}}.box_footer,.box_header{text-align:center;background-color:#f4f5f6;padding:1em 0 0.5em}.box_header h1{letter-spacing:0.19em;margin-bottom:0.4em}.box_header .sub{text-transform:uppercase;margin:0;letter-spacing:0.13em;color:#d5d8de}.box_header .line{margin:0 auto 0.5em}.logo{display:block;width:80px;height:80px;margin:0 auto;position:relative;margin-bottom:0.5em;cursor:pointer}.logo svg{width:100%;height:100%}.logo svg path.circle{fill:white}.box_header .logo svg path.butterfly{fill:#f4f5f6;-webkit-animation-duration:3s;-webkit-animation-name:logopulse;-webkit-animation-iteration-count:1;-webkit-animation-delay:0s;-webkit-animation-direction:normal;-webkit-animation-fill-mode:forwards;-moz-animation-duration:3s;-moz-animation-name:logopulse;-moz-animation-iteration-count:1;-moz-animation-delay:0s;-moz-animation-direction:normal;-moz-animation-fill-mode:forwards;-o-animation-duration:3s;-o-animation-name:logopulse;-o-animation-iteration-count:1;-o-animation-delay:0s;-o-animation-direction:normal;-o-animation-fill-mode:forwards;animation-duration:3s;animation-name:logopulse;animation-iteration-count:1;animation-delay:0s;animation-direction:normal;animation-fill-mode:forwards}.box_footer .logo{width:40px;height:40px}.box_footer .logo svg path.circle{fill:#f4f5f6}.box_footer .logo svg path.butterfly{fill:#cfd2db}@-webkit-keyframes logopulse{0%{fill:white}100%{fill:#f4f5f6}}@-moz-keyframes logopulse{0%{fill:white}100%{fill:#f4f5f6}}@-o-keyframes logopulse{0%{fill:white}100%{fill:#f4f5f6}}@keyframes logopulse{0%{fill:white}100%{fill:#f4f5f6}}.line{background-color:#d5d8de;width:6em;height:1px;margin:0 auto 0.5em;border:none}.box_page{width:95%;max-width:40em;margin:4em auto;color:#a5b0c3}.box_page a:link,.box_page a:visited{color:#4f5d76}.box_page a:hover,.box_page a:active{color:#cfd2db}
+        </style>
+    <script type="text/javascript" charset="utf-8">/* Modernizr 2.6.2 (Custom Build) | MIT & BSD
+ * Build: http://modernizr.com/download/#-borderimage-inlinesvg-svg-shiv-cssclasses-teststyles-testprop-testallprops-prefixes-domprefixes-cssclassprefix:mzr_
+ */
+;window.Modernizr=function(a,b,c){function A(a){j.cssText=a}function B(a,b){return A(m.join(a+";")+(b||""))}function C(a,b){return typeof a===b}function D(a,b){return!!~(""+a).indexOf(b)}function E(a,b){for(var d in a){var e=a[d];if(!D(e,"-")&&j[e]!==c)return b=="pfx"?e:!0}return!1}function F(a,b,d){for(var e in a){var f=b[a[e]];if(f!==c)return d===!1?a[e]:C(f,"function")?f.bind(d||b):f}return!1}function G(a,b,c){var d=a.charAt(0).toUpperCase()+a.slice(1),e=(a+" "+o.join(d+" ")+d).split(" ");return C(b,"string")||C(b,"undefined")?E(e,b):(e=(a+" "+p.join(d+" ")+d).split(" "),F(e,b,c))}var d="2.6.2",e={},f=!0,g=b.documentElement,h="modernizr",i=b.createElement(h),j=i.style,k,l={}.toString,m=" -webkit- -moz- -o- -ms- ".split(" "),n="Webkit Moz O ms",o=n.split(" "),p=n.toLowerCase().split(" "),q={svg:"http://www.w3.org/2000/svg"},r={},s={},t={},u=[],v=u.slice,w,x=function(a,c,d,e){var f,i,j,k,l=b.createElement("div"),m=b.body,n=m||b.createElement("body");if(parseInt(d,10))while(d--)j=b.createElement("div"),j.id=e?e[d]:h+(d+1),l.appendChild(j);return f=["&#173;",'<style id="s',h,'">',a,"</style>"].join(""),l.id=h,(m?l:n).innerHTML+=f,n.appendChild(l),m||(n.style.background="",n.style.overflow="hidden",k=g.style.overflow,g.style.overflow="hidden",g.appendChild(n)),i=c(l,a),m?l.parentNode.removeChild(l):(n.parentNode.removeChild(n),g.style.overflow=k),!!i},y={}.hasOwnProperty,z;!C(y,"undefined")&&!C(y.call,"undefined")?z=function(a,b){return y.call(a,b)}:z=function(a,b){return b in a&&C(a.constructor.prototype[b],"undefined")},Function.prototype.bind||(Function.prototype.bind=function(b){var c=this;if(typeof c!="function")throw new TypeError;var d=v.call(arguments,1),e=function(){if(this instanceof e){var a=function(){};a.prototype=c.prototype;var f=new a,g=c.apply(f,d.concat(v.call(arguments)));return Object(g)===g?g:f}return c.apply(b,d.concat(v.call(arguments)))};return e}),r.borderimage=function(){return G("borderImage")},r.svg=function(){return!!b.createElementNS&&!!b.createElementNS(q.svg,"svg").createSVGRect},r.inlinesvg=function(){var a=b.createElement("div");return a.innerHTML="<svg/>",(a.firstChild&&a.firstChild.namespaceURI)==q.svg};for(var H in r)z(r,H)&&(w=H.toLowerCase(),e[w]=r[H](),u.push((e[w]?"":"no-")+w));return e.addTest=function(a,b){if(typeof a=="object")for(var d in a)z(a,d)&&e.addTest(d,a[d]);else{a=a.toLowerCase();if(e[a]!==c)return e;b=typeof b=="function"?b():b,typeof f!="undefined"&&f&&(g.className+=" mzr_"+(b?"":"no-")+a),e[a]=b}return e},A(""),i=k=null,function(a,b){function k(a,b){var c=a.createElement("p"),d=a.getElementsByTagName("head")[0]||a.documentElement;return c.innerHTML="x<style>"+b+"</style>",d.insertBefore(c.lastChild,d.firstChild)}function l(){var a=r.elements;return typeof a=="string"?a.split(" "):a}function m(a){var b=i[a[g]];return b||(b={},h++,a[g]=h,i[h]=b),b}function n(a,c,f){c||(c=b);if(j)return c.createElement(a);f||(f=m(c));var g;return f.cache[a]?g=f.cache[a].cloneNode():e.test(a)?g=(f.cache[a]=f.createElem(a)).cloneNode():g=f.createElem(a),g.canHaveChildren&&!d.test(a)?f.frag.appendChild(g):g}function o(a,c){a||(a=b);if(j)return a.createDocumentFragment();c=c||m(a);var d=c.frag.cloneNode(),e=0,f=l(),g=f.length;for(;e<g;e++)d.createElement(f[e]);return d}function p(a,b){b.cache||(b.cache={},b.createElem=a.createElement,b.createFrag=a.createDocumentFragment,b.frag=b.createFrag()),a.createElement=function(c){return r.shivMethods?n(c,a,b):b.createElem(c)},a.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+l().join().replace(/\w+/g,function(a){return b.createElem(a),b.frag.createElement(a),'c("'+a+'")'})+");return n}")(r,b.frag)}function q(a){a||(a=b);var c=m(a);return r.shivCSS&&!f&&!c.hasCSS&&(c.hasCSS=!!k(a,"article,aside,figcaption,figure,footer,header,hgroup,nav,section{display:block}mark{background:#FF0;color:#000}")),j||p(a,c),a}var c=a.html5||{},d=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,e=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,f,g="_html5shiv",h=0,i={},j;(function(){try{var a=b.createElement("a");a.innerHTML="<xyz></xyz>",f="hidden"in a,j=a.childNodes.length==1||function(){b.createElement("a");var a=b.createDocumentFragment();return typeof a.cloneNode=="undefined"||typeof a.createDocumentFragment=="undefined"||typeof a.createElement=="undefined"}()}catch(c){f=!0,j=!0}})();var r={elements:c.elements||"abbr article aside audio bdi canvas data datalist details figcaption figure footer header hgroup mark meter nav output progress section summary time video",shivCSS:c.shivCSS!==!1,supportsUnknownElements:j,shivMethods:c.shivMethods!==!1,type:"default",shivDocument:q,createElement:n,createDocumentFragment:o};a.html5=r,q(b)}(this,b),e._version=d,e._prefixes=m,e._domPrefixes=p,e._cssomPrefixes=o,e.testProp=function(a){return E([a])},e.testAllProps=G,e.testStyles=x,g.className=g.className.replace(/(^|\s)no-js(\s|$)/,"$1$2")+(f?" mzr_js mzr_"+u.join(" mzr_"):""),e}(this,this.document);</script>
+</head>
+<body>       
+    <header class="box_header">
+                <a href="/" class="logo"><svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" overflow="visible" enable-background="new 0 0 100 100"
+	 xml:space="preserve"
+	 preserveAspectRatio="xMidYMin meet"
+	 >
+<defs>
+</defs>
+<path class="circle" fill="#FF0000" d="M100,49.998C100,77.614,77.614,100,50.002,100C22.386,100,0,77.614,0,49.998C0,22.386,22.386,0,50.002,0
+	C77.614,0,100,22.386,100,49.998z"/>
+<path class="butterfly" fill="#FCEE21" d="M74.706,34.128c-0.144,0.34-0.24,0.826-0.192,1.265c0.049,0.437-0.144,1.069-0.238,1.312
+	c-0.098,0.244-0.098,1.07-0.098,1.266c0,0.194-0.143,0.826-0.335,1.021c-0.192,0.194-0.288,0.632-0.288,0.972
+	c0,0.341-0.384,1.216-0.574,1.41c-0.192,0.195-0.576,0.632-0.576,0.924c0,0.291-0.383,1.41-0.672,1.702
+	c-0.287,0.292-0.719,0.729-0.719,0.973c0,0.243,0,0.973-0.383,1.46c-0.384,0.485-0.672,1.215-0.672,1.505
+	c0,0.293-0.336,1.12-0.527,1.363c-0.192,0.242-0.67,1.215-1.008,1.604c-0.335,0.39-1.726,1.848-2.925,1.945
+	c-0.747,0.061-2.76,0.141-4.892,0.098c0,0,4.154,0.603,5.539,2.006c1.006,1.021,0.61,1.423,0.61,1.678s0.216,0.766,0.36,0.985
+	c0.143,0.219,0.322,0.911,0.035,1.312c-0.286,0.401-0.432,0.912-0.359,1.241c0.073,0.328,0.216,1.203,0,1.677
+	c-0.216,0.475-0.539,0.803-0.719,1.277s-0.072,1.167-0.432,1.422s-1.187,0.657-1.511,1.094c-0.323,0.438-0.54,0.729-1.043,0.656
+	c-0.503-0.072-1.149-0.145-1.475,0.037c-0.323,0.182-0.718,0.109-1.007-0.037c-0.287-0.145-0.971-0.475-1.438-0.328
+	s-3.021,0.146-4.675-2.589c-0.716-1.185-1.329-2.416-1.812-3.528c0,2.864-0.306,5.707-1.638,5.721c0.002,0,0.005,0.003,0.009,0.003
+	h-0.017c0.003,0,0.005-0.003,0.008-0.003c-1.357-0.014-1.648-2.959-1.636-5.875c-0.492,1.152-1.131,2.443-1.88,3.683
+	c-1.653,2.735-4.207,2.735-4.675,2.589c-0.467-0.146-1.15,0.184-1.438,0.328c-0.287,0.146-0.683,0.219-1.006,0.037
+	c-0.323-0.182-0.971-0.109-1.475-0.037c-0.503,0.074-0.719-0.219-1.042-0.656c-0.324-0.438-1.151-0.839-1.511-1.094
+	c-0.359-0.255-0.251-0.947-0.432-1.422c-0.18-0.475-0.503-0.803-0.719-1.277c-0.215-0.475-0.072-1.349,0-1.677
+	c0.072-0.329-0.072-0.839-0.36-1.241c-0.288-0.4-0.107-1.094,0.036-1.312c0.143-0.218,0.359-0.73,0.359-0.985
+	s-0.396-0.656,0.612-1.678c1.385-1.403,5.537-2.006,5.538-2.006c-2.13,0.043-4.143-0.037-4.891-0.098
+	c-1.199-0.097-2.589-1.556-2.925-1.945c-0.336-0.389-0.815-1.362-1.006-1.604c-0.192-0.243-0.528-1.07-0.528-1.363
+	c0-0.291-0.288-1.021-0.671-1.505c-0.384-0.487-0.384-1.217-0.384-1.46c0-0.244-0.432-0.68-0.719-0.973
+	c-0.288-0.292-0.672-1.411-0.672-1.702c0-0.292-0.382-0.729-0.575-0.924c-0.192-0.194-0.576-1.069-0.576-1.41
+	c0-0.34-0.096-0.778-0.288-0.972c-0.192-0.195-0.335-0.827-0.335-1.021c0-0.195,0-1.021-0.096-1.266
+	c-0.096-0.242-0.288-0.875-0.24-1.312c0.049-0.438-0.048-0.925-0.192-1.265c-0.143-0.341-0.191-0.973,0.097-1.168
+	c0.287-0.194,1.342-0.632,3.499-0.632c2.158,0,4.269,0.924,5.707,1.703c1.438,0.778,3.739,2.577,4.458,3.015
+	c0.72,0.438,3.357,3.064,5.562,5.398c1.208,1.279,2.213,3.372,2.876,5.007c0.12-0.27,0.229-0.466,0.241-0.687
+	c0.02-0.399,0.191-0.625,0.405-0.753c-0.174-0.147-0.261-0.348-0.32-0.559c-0.115-0.03-0.288-0.787,0-1.138
+	c0.287-0.35,0.862-0.174,0.862-0.174c-0.006,0.015-0.013,0.032-0.02,0.048c0.019-0.003,0.036-0.007,0.055-0.011
+	c0.003-0.559-0.151-0.976-0.326-1.292c-0.275-0.499-0.725-1.244-1.013-1.754c-0.243-0.431-2.311-4.151-2.517-4.523
+	c-0.323-0.583-1.151-2.224-1.33-2.626c-0.18-0.4-0.18-0.693-0.18-1.021s0.036-0.437,0.18-0.437s0.107,0.656,0.144,1.203
+	c0.036,0.548,1.941,3.976,2.481,4.96c0.539,0.984,1.948,3.426,2.337,4.121c0.279,0.499,0.374,0.985,0.402,1.342
+	c0.055-0.004,0.11-0.01,0.161-0.01c0.01,0,0.016,0.002,0.025,0.002c0.028-0.356,0.125-0.839,0.4-1.333
+	c0.389-0.695,1.797-3.137,2.336-4.121c0.54-0.984,2.446-4.413,2.482-4.96c0.035-0.547,0-1.203,0.144-1.203s0.181,0.109,0.181,0.437
+	s0,0.621-0.181,1.021c-0.18,0.402-1.007,2.043-1.329,2.626c-0.207,0.373-2.275,4.093-2.519,4.523
+	c-0.287,0.51-0.738,1.256-1.013,1.755c-0.172,0.312-0.326,0.724-0.328,1.275c0.039,0.004,0.084,0.005,0.117,0.012
+	c-0.006-0.011-0.01-0.023-0.015-0.033c0,0,0.574-0.176,0.862,0.174c0.287,0.351,0.115,1.108,0,1.138
+	c-0.01,0.002-0.027-0.008-0.043-0.017c0,0.005,0,0.012,0,0.017c-0.014,0.16-0.137,0.356-0.352,0.513
+	c0.252,0.114,0.459,0.354,0.479,0.8c0.01,0.198,0.101,0.38,0.205,0.61c0.664-1.623,1.655-3.671,2.846-4.93
+	c2.205-2.334,4.843-4.96,5.562-5.398c0.72-0.438,3.021-2.237,4.459-3.015c1.438-0.778,3.548-1.703,5.707-1.703
+	c2.158,0,3.211,0.438,3.5,0.632C74.898,33.156,74.85,33.788,74.706,34.128z"/>
+</svg></a>
+        <h1 class="beta large-text">httpflies</h1>
+        <hr class="line"/>
+        <p class="sub">A Miscellany Of <span class="nw">Http Status Codes</span></p>
+    </header>          
+    <section class="box_page">  
+
+        <h2>Initial Idea</h2>
+
+        <p>Dean: Like a lot of ideas, HTTPflies appeared almost entirely by accident. I saw a tweet a few months ago, from someone who had seen an obscure HTTP status code. The tweet jokingly said something like, &lsquo;you rarely see this in the wild&rsquo;. The notion of &lsquo;rare code&rsquo; got me thinking.</p>
+
+        <p>This got me thinking about the documentation and classification of animals &ndash; could we do something fun, along these lines, but for code? So Tom and I started chatting about butterfly collections, and whether we could do something to experiment with generating multiple versions of something, from a few basic graphics.</p>
+
+        <h2>Why use SVG</h2>
+
+        <p>Tom:</p>
+
+        <ol start="1">
+            <li>SVG is cool.</li>
+
+            <li>Scalable graphics are good and responsive.</li>
+
+            <li>When embedded into a page it can be manipulated with tools like jQuery (just like HTML can be).</li>
+
+            <li>It can be like a library (a relatively small download which is then reused to create far more complex things through manipulation and combination of the parts).</li>
+
+            <li>It forms a nice half-way point between hand-crafted imagery and code-created imagery, in that some parts can be done by hand but can then be manipulated by code.</li>
+        </ol>
+
+        <p>That last point is interesting. There&rsquo;s something in that about how &ldquo;designers&rdquo; and &ldquo;coders&rdquo; work together and how SVG forms an interesting span across that gap. You could create the graphics entirely in code (with combination of squares and circles etc) but I like the fact that an artist can create something in illustrator and that it pops out in a form which is perfect to be coded with. With PSD&rsquo;s etc you have to translate the pixels into code, but with SVG the graphic is already code. Not that SVG would be good to do web design in, but just it&rsquo;s an interesting half-way point somehow.</p>
+
+        <h2>Library of shapes</h2>
+
+        <img style="width:100%" src="wing_diagram.png" alt="diagram of butterfly wing layers" />
+
+        <p>Tom: We reduced the anatomy of a butterfly down to some component parts. Deciding that a single body would suffice and that for each wing-type we&rsquo;d want at least two layers. As every school-child knows you only need to paint half a butterfly and so it was here with one set of wings being enough to create a full butterfly. Once we had these components in place we could pick out the wings shapes we wanted, duplicate and re-colour the different parts and present as many different butterflies as we needed all with pure code. Using SVG as a repository of reusable elements like this seems like it might have interesting possiblities for the future.</p>
+
+        <h2>Colours</h2>
+
+        <p>Dean: We wanted the colours to be generated kind of randomly, but it soon became clear that some combinations and types of colours were pretty hideous. We needed some logic to ensure the HTTPflies were all beautiful, and harmonious, while at the same time not too similar to others. Tom was able to omit certain colours and make some rules around how we worked out each HTTPfly&rsquo;s palette. Also, it was important that after each HTTPfly&rsquo;s palette was assigned, it would be the same each time (and not randomly created on page refresh).</p>
+
+        <h2>Download Size</h2>
+
+        <p>Tom: As one of the main aims was to create a lot out of very little it was important that the initial download of the site would be as small as possible. Not only that but also it was vital that we made as much of that download as possible.</p>
+
+        <p>The normal routine of concatenating and minifying CSS and JavaScript files was still important but as this was to be a single page website it became clear that we could simply serve the entire thing as a single HTML file which could then be served (and gzipped in transit) and not need to be added to with any other external files in order to support further interactions. Not only this but apart from the SVG code we were including inline we could also reference other (smaller) graphics via embedded data URIs meaning even the incidental imagery was included in the same file.</p>
+
+        <p>Now, this would obviously not always for desirable for larger websites (where caching benefits kick in) but for an experiment like this it seemed to fit nicely within the overall idea, to serve the whole thing as one file.</p>
+
+        <span />
+
+        <p>So we hope you like it. It was great fun to make.</p>
+
+        <h2>Credits</h2>
+
+        <p>We need to give credit to a number of giants on whose shoulders etc etc...</p>
+
+        <ol>
+            <li>That <a href="https://github.com/andreineculau">wonderful fellow</a> who created the <a href="https://github.com/andreineculau/know-your-http-well/blob/master/js/status-codes.json">JSON with all the status codes in it</a>.</li>
+
+            <li>The <a href="http://keith-wood.name/">nice guy</a> who made the <a href="http://keith-wood.name/svg.html">jQuery library which makes it possible to work with SVG</a> (and also the <a href="https://github.com/micha149">bloke</a> who <a href="https://github.com/kbwood/svg/pull/8">updated that code to solve a problem</a> I was having).</li>
+
+            <li>The <a href="http://brehaut.net/about/">lovely chap</a> who created the <a href="https://github.com/brehaut/color-js">excellent JavaScript colour library</a> we used.</li>
+
+            <li>The phenonimnal <a href="https://developer.mozilla.org/en-US/docs/Web/SVG">MDN SVG documentation</a> which is awesome and usable.</li>
+
+            <li>Copious people on <a href="http://stackoverflow.com/search?q=svg">StackOverflow</a> who had already asnwered every question I ever thought of asking.</li>
+
+        </ol>
+
+        <h2>A quick note on xHTML</h2>      
+
+        <p>Tom: There was a moment in the middle where I thought I was going to have to serve the whole thing as xHTML. This came from a problem I had with my version of Safari (5 &mdash; for some reason) and I found a <a href="http://stackoverflow.com/questions/4504942/mobile-safari-svg-problem">question on stackoverflow</a> which seemed to point to this as the solution. I did quite a lot of work to make everything xHTML compatible (escaping various characters &amp; using CDATA blocks for JS and CSS) and it was only when I implemented <a href="http://modernizr.com/">Modernizr</a> at the end to check for compatibitly that I realised that Safari 5 isn't considered a browser that supports inline SVG. So we dropped support for it and went back to serving HTML5 instead. You live and learn.</p> 
+
+        <h2>Any thoughts?</h2>
+
+        <p>If you've got any thoughts or suggestions (especially how to make it work in Firefox!!) we'd love to hear from you, tweet us <a href="http://twitter.com/httpflies/">@httpflies</a>.</p>
+
+    </section><!-- .box_page -->    
+    <footer class="box_footer">
+        <p>HTTPflies is a joint project by <a href="http://twitter.com/morganesque">Tom Morgan</a> and <a href="http://twitter.com/DeanVipond">Dean Vipond</a></p>
+        <p>You can go back to <a href="/">HTTPflies</a> if you want.</p>
+        <p class="small">Copyright &copy; 2013</p>
+        <div class="logo"><svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" overflow="visible" enable-background="new 0 0 100 100"
+	 xml:space="preserve"
+	 preserveAspectRatio="xMidYMin meet"
+	 >
+<defs>
+</defs>
+<path class="circle" fill="#FF0000" d="M100,49.998C100,77.614,77.614,100,50.002,100C22.386,100,0,77.614,0,49.998C0,22.386,22.386,0,50.002,0
+	C77.614,0,100,22.386,100,49.998z"/>
+<path class="butterfly" fill="#FCEE21" d="M74.706,34.128c-0.144,0.34-0.24,0.826-0.192,1.265c0.049,0.437-0.144,1.069-0.238,1.312
+	c-0.098,0.244-0.098,1.07-0.098,1.266c0,0.194-0.143,0.826-0.335,1.021c-0.192,0.194-0.288,0.632-0.288,0.972
+	c0,0.341-0.384,1.216-0.574,1.41c-0.192,0.195-0.576,0.632-0.576,0.924c0,0.291-0.383,1.41-0.672,1.702
+	c-0.287,0.292-0.719,0.729-0.719,0.973c0,0.243,0,0.973-0.383,1.46c-0.384,0.485-0.672,1.215-0.672,1.505
+	c0,0.293-0.336,1.12-0.527,1.363c-0.192,0.242-0.67,1.215-1.008,1.604c-0.335,0.39-1.726,1.848-2.925,1.945
+	c-0.747,0.061-2.76,0.141-4.892,0.098c0,0,4.154,0.603,5.539,2.006c1.006,1.021,0.61,1.423,0.61,1.678s0.216,0.766,0.36,0.985
+	c0.143,0.219,0.322,0.911,0.035,1.312c-0.286,0.401-0.432,0.912-0.359,1.241c0.073,0.328,0.216,1.203,0,1.677
+	c-0.216,0.475-0.539,0.803-0.719,1.277s-0.072,1.167-0.432,1.422s-1.187,0.657-1.511,1.094c-0.323,0.438-0.54,0.729-1.043,0.656
+	c-0.503-0.072-1.149-0.145-1.475,0.037c-0.323,0.182-0.718,0.109-1.007-0.037c-0.287-0.145-0.971-0.475-1.438-0.328
+	s-3.021,0.146-4.675-2.589c-0.716-1.185-1.329-2.416-1.812-3.528c0,2.864-0.306,5.707-1.638,5.721c0.002,0,0.005,0.003,0.009,0.003
+	h-0.017c0.003,0,0.005-0.003,0.008-0.003c-1.357-0.014-1.648-2.959-1.636-5.875c-0.492,1.152-1.131,2.443-1.88,3.683
+	c-1.653,2.735-4.207,2.735-4.675,2.589c-0.467-0.146-1.15,0.184-1.438,0.328c-0.287,0.146-0.683,0.219-1.006,0.037
+	c-0.323-0.182-0.971-0.109-1.475-0.037c-0.503,0.074-0.719-0.219-1.042-0.656c-0.324-0.438-1.151-0.839-1.511-1.094
+	c-0.359-0.255-0.251-0.947-0.432-1.422c-0.18-0.475-0.503-0.803-0.719-1.277c-0.215-0.475-0.072-1.349,0-1.677
+	c0.072-0.329-0.072-0.839-0.36-1.241c-0.288-0.4-0.107-1.094,0.036-1.312c0.143-0.218,0.359-0.73,0.359-0.985
+	s-0.396-0.656,0.612-1.678c1.385-1.403,5.537-2.006,5.538-2.006c-2.13,0.043-4.143-0.037-4.891-0.098
+	c-1.199-0.097-2.589-1.556-2.925-1.945c-0.336-0.389-0.815-1.362-1.006-1.604c-0.192-0.243-0.528-1.07-0.528-1.363
+	c0-0.291-0.288-1.021-0.671-1.505c-0.384-0.487-0.384-1.217-0.384-1.46c0-0.244-0.432-0.68-0.719-0.973
+	c-0.288-0.292-0.672-1.411-0.672-1.702c0-0.292-0.382-0.729-0.575-0.924c-0.192-0.194-0.576-1.069-0.576-1.41
+	c0-0.34-0.096-0.778-0.288-0.972c-0.192-0.195-0.335-0.827-0.335-1.021c0-0.195,0-1.021-0.096-1.266
+	c-0.096-0.242-0.288-0.875-0.24-1.312c0.049-0.438-0.048-0.925-0.192-1.265c-0.143-0.341-0.191-0.973,0.097-1.168
+	c0.287-0.194,1.342-0.632,3.499-0.632c2.158,0,4.269,0.924,5.707,1.703c1.438,0.778,3.739,2.577,4.458,3.015
+	c0.72,0.438,3.357,3.064,5.562,5.398c1.208,1.279,2.213,3.372,2.876,5.007c0.12-0.27,0.229-0.466,0.241-0.687
+	c0.02-0.399,0.191-0.625,0.405-0.753c-0.174-0.147-0.261-0.348-0.32-0.559c-0.115-0.03-0.288-0.787,0-1.138
+	c0.287-0.35,0.862-0.174,0.862-0.174c-0.006,0.015-0.013,0.032-0.02,0.048c0.019-0.003,0.036-0.007,0.055-0.011
+	c0.003-0.559-0.151-0.976-0.326-1.292c-0.275-0.499-0.725-1.244-1.013-1.754c-0.243-0.431-2.311-4.151-2.517-4.523
+	c-0.323-0.583-1.151-2.224-1.33-2.626c-0.18-0.4-0.18-0.693-0.18-1.021s0.036-0.437,0.18-0.437s0.107,0.656,0.144,1.203
+	c0.036,0.548,1.941,3.976,2.481,4.96c0.539,0.984,1.948,3.426,2.337,4.121c0.279,0.499,0.374,0.985,0.402,1.342
+	c0.055-0.004,0.11-0.01,0.161-0.01c0.01,0,0.016,0.002,0.025,0.002c0.028-0.356,0.125-0.839,0.4-1.333
+	c0.389-0.695,1.797-3.137,2.336-4.121c0.54-0.984,2.446-4.413,2.482-4.96c0.035-0.547,0-1.203,0.144-1.203s0.181,0.109,0.181,0.437
+	s0,0.621-0.181,1.021c-0.18,0.402-1.007,2.043-1.329,2.626c-0.207,0.373-2.275,4.093-2.519,4.523
+	c-0.287,0.51-0.738,1.256-1.013,1.755c-0.172,0.312-0.326,0.724-0.328,1.275c0.039,0.004,0.084,0.005,0.117,0.012
+	c-0.006-0.011-0.01-0.023-0.015-0.033c0,0,0.574-0.176,0.862,0.174c0.287,0.351,0.115,1.108,0,1.138
+	c-0.01,0.002-0.027-0.008-0.043-0.017c0,0.005,0,0.012,0,0.017c-0.014,0.16-0.137,0.356-0.352,0.513
+	c0.252,0.114,0.459,0.354,0.479,0.8c0.01,0.198,0.101,0.38,0.205,0.61c0.664-1.623,1.655-3.671,2.846-4.93
+	c2.205-2.334,4.843-4.96,5.562-5.398c0.72-0.438,3.021-2.237,4.459-3.015c1.438-0.778,3.548-1.703,5.707-1.703
+	c2.158,0,3.211,0.438,3.5,0.632C74.898,33.156,74.85,33.788,74.706,34.128z"/>
+</svg></div>
+    </footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-20506545-6', 'httpflies.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
