@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+// compass imports - might as well be here.
+@import "compass/css3/border-radius";
+@import "compass/css3/transform";
+@import "compass/css3/inline-block";
+@import "compass/css3/transition";
+@import "compass/css3/opacity";
+
+// SMACSS main imports
+@import "base";
+@import "layout";
+@import "modules/header";
+
+/* ----- THE HR LINE ---- */
+.line {
+    background-color:$headColor;
+    width:6em;
+    height:1px;
+    margin:0 auto 0.5em;
+    border:none;
+}
+
+.box_page {
+    width:95%;
+    max-width:40em;
+    margin:4em auto;
+    color:$textColor;
+    // line-height:1.24em;
+
+    a:link,
+    a:visited {
+        color:$darkColor;
+    }
+    a:hover,
+    a:active {
+        color:$midColor;
+    }
+    
+}

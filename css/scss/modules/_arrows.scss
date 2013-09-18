@@ -6,6 +6,13 @@
 
     $arrowsize:40px;
 
+    /*
+        Only show the arrows to things bigger than phones (probably).
+    */
+    @media only screen and ( max-width: 48em ) { /* below 768 */
+        display:none;
+    } 
+
     .button {
 
         &:link,

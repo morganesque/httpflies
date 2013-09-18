@@ -1,37 +1,53 @@
 /*! functions.js -  This is the main code for the website */
 /* jshint laxcomma: true */
 
-$(document).ready(function()
-{    
-    $('rect.debug').remove(); // hide the degbugging rectangle (for now).
-    $('.box_case_container').hide(); // hide the single httpfly container.            
+console.log('I\'m here');
+
+(function(){
+
+    console.log('and in here');
+
+    if (!Modernizr.inlinesvg)
+    {
+        console.log('they dont support inlinesvg');
+        $('.box_sorry').show(); 
+        return;
+    }
+
+    $('rect.debug').remove();           // hide the degbugging rectangle (for now).
+    $('.box_case_container').hide();    // hide the single httpfly container.            
     
     var Color = net.brehaut.Color;                      // easier to use reference.
     var types = ['five','four','three','two','one'];    // types of butterfly wing.
     var huts = 0;                                       // to count the httpflies.
+
+    var original = $('#original');      // grab the original one once.
 
     /*
         Factory (haha!) function for creating httpflies. 
     */
     function createHttpfly(code,it)
     {
-        var newHttpfly = $('#original').clone().attr('id',code);         // clone the original SVG data.
-        var butterfly = newHttpfly.find('.butterfly'); 
-        var wings = newHttpfly.find('.the_wings');                        // grab the wings part.
-        // var chosen = types[Math.floor(Math.random()*types.length)];        // decide which wing shape to use.
+        var newHttpfly = original.clone().attr('id',code);  // clone the original SVG data.
+        var butterfly = newHttpfly.find('.butterfly');      // grab the butterfly part.
+        var wings = newHttpfly.find('.the_wings');          // grab the wings part.
         
-        var c = parseInt(code.substr(0,1),0)-1;
-        var chosen = types[c];        // decide which wing shape to use.
+        // var c = parseInt(code.substr(0,1),0)-1;             // first number of the code.
+        var chosen = types[data[it].type];                  // decide which wing shape to use.
 
         // eeek magic numbers - just aligning the shapes a bit more nicely.
-        if (c == 4) $(butterfly).attr('transform','translate(0 40)');
-        if (c == 3) $(butterfly).attr('transform','translate(0 30)');
-        if (c == 2) $(butterfly).attr('transform','translate(0 40)');
+        if (chosen == 'four') $(butterfly).attr('transform','translate(0 30)');
+        if (chosen == 'three') $(butterfly).attr('transform','translate(0 40)');
+        if (chosen == 'two') $(butterfly).attr('transform','translate(0 30)');
+        if (chosen == 'one') $(butterfly).attr('transform','translate(0 40)');
+
+        // newHttpfly.addClass('c'+c);
+        newHttpfly.addClass('chosen'+chosen);
                 
-        // how far to the right to shift the new wings.
+        // and again - how far to the right to shift the new wings.
         trans = 414;
 
-        // actually filter and modify the shapes needed for the httpfly.
+        // filter and modify the shapes needed for the httpfly.
         $(types).each(function(i,val)
         {
             if (val == chosen)
@@ -99,22 +115,23 @@ $(document).ready(function()
     {
         var colours = [];
         // the first gradient colour (center of background)
-        colours[0] = Color({hue:hue, saturation:0.9, lightness:0.45});    
+        colours[0] = Color({hue:hue, saturation:0.9, lightness:0.65});    
         // the second gradient colour (outer background)
-        colours[1] = colours[0].shiftHue((360/data.length)*5);                            
+        colours[1] = colours[0].shiftHue((360/data.length)*5).darkenByAmount(0.3);                            
         // top color of front wing gradient
-        colours[2] = colours[0].shiftHue(-45).darkenByAmount(0.2);
+        colours[2] = colours[0].shiftHue(-30).darkenByAmount(0.5);
         // bottom colour of front wing gradient.
-        colours[3] = colours[2].darkenByAmount(0.2);
+        colours[3] = colours[2].darkenByAmount(0.3);
         // bottom colour of body gradient.
-        colours[4] = colours[0].shiftHue(-180);
+        colours[4] = colours[0].shiftHue(+60);
         // top color of body gradient.
         colours[5] = colours[4].darkenByAmount(0.5);
 
         return colours;
-    }
+    };
 
     var boxIndex = $('.box_index');
+    var starter = $('#starter');
 
     var createAllTheHttpflies = function()
     {
@@ -122,7 +139,7 @@ $(document).ready(function()
         {
             var code = data[i].code;
 
-            var hut = $('#starter').clone();
+            var hut = starter.clone();
             hut.attr('id','');
 
             var b = hut.find('.barnum');     // grab the container for the httpfly.con
@@ -131,43 +148,46 @@ $(document).ready(function()
             // $(h).appendTo(b);
             b.attr('href','#'+code);
 
+            hut.attr('data-hue',data[i].hue);
+            if (code == '404') hut.css({'display':'none'});
+
             boxIndex.append(hut);
 
-            var r = i%3;
-                 if (r < 1) $(hut).addClass('w2');
-            else if (r < 2) $(hut).addClass('w3');
+            var r = data[i].size;
+                 if (r < 1) hut.addClass('w2');
+            else if (r < 2) hut.addClass('w3');
             // else if (r < 3) $(hut).addClass('w4');
 
-            var l = $(hut).find('.label p'); l.text(code);
+            var l = hut.find('.label p'); l.text(code);
 
             // $(createHttpfly(404)).appendTo(b);     // stick in the httpfly.
-
             // $(hut).find('.label p').text(code);
         }    
     };
 
     createAllTheHttpflies();
 
-    $('#starter').remove(); // Get rid of the placeholder HTML I put in there.
+    
+    starter.remove(); // Get rid of the placeholder HTML I put in there.
 
     /*
         What to do when a httpfly is clicked.
     */
     $('.box_index .barnum').on('click',function(e)
     {
-        e.preventDefault();
+        e.preventDefault();        
         var code = $(this).attr('href').substr(1);
         history.pushState({number:code}, '', '#'+code);        
-        showSingleHttpfly(code);
+        showSingleHttpfly(code,true);
         ga('send', '#'+code, 'view');
     });
 
     var pushHandle = {
-         label:     $('.box_details .label p')
-        ,name:      $('.box_details .name')
-        ,latin:     $('.box_details .latin')
-        ,desc:      $('.box_details .desc')
-        ,tweet:     $('.box_details .tweet-this')
+         label:     $('#details .label p')
+        ,name:      $('#details .name')
+        ,latin:     $('#details .latin')
+        ,desc:      $('#details .desc')
+        ,tweet:     $('#details .tweet-this')
         ,httpfly:   $('.box_case .box_httpfly .barnum')
     };    
 
@@ -177,34 +197,40 @@ $(document).ready(function()
         var code = pushHandle.label.text();
         var newdata = findPrev(code);
         history.pushState({number:newdata.code}, '', '#'+newdata.code);        
-        showSingleHttpfly(newdata.code);
+        showSingleHttpfly(newdata.code,false);
         ga('send', 'pageview', '#'+newdata.code);
     });
 
-    $('.box_arrows .right').on('click',function(e)
+    var goNextOne = function(e)
     {
         e.preventDefault();
         var code = pushHandle.label.text();
         var newdata = findNext(code);
         history.pushState({number:newdata.code}, '', '#'+newdata.code);        
-        showSingleHttpfly(newdata.code);
+        showSingleHttpfly(newdata.code,false);
         ga('send', 'pageview', '#'+newdata.code);
-    });
+    }
 
     var backToIndex = function(e)
     {
-        e.preventDefault();
+        console.log('showing: backToIndex');
+
+        if (e !== undefined) e.preventDefault();
         $('.box_index').show();
         $('.box_case_container').hide();                
         pushHandle.httpfly.find('svg').remove();    // got to make sure there's only one showing or the unique ID's don't work.
-        history.pushState({number:null}, '', '/');        
+        if (e !== undefined) history.pushState({number:0}, '', '/');        
         ga('send', 'pageview', '/');
+
+        // window.scrollTo(0,0);
     };
 
-    $('.logo').on('click',backToIndex);    
-    $('.box_case .barnum').on('click',backToIndex);
+    $('.box_arrows .right').on('click',goNextOne);
 
-    function showSingleHttpfly(code)
+    $('.logo').on('click',backToIndex);    
+    $('.box_case .barnum').on('click',goNextOne);
+
+    function showSingleHttpfly(code,scroll)
     {
         console.log('showing single: '+code);
 
@@ -221,24 +247,26 @@ $(document).ready(function()
         pushHandle.desc.text(data.description);
         pushHandle.latin.text(data.latin);
 
-        var url = 'http://httpflies/%23'+code;
-        var message = 'Take a look at HTTPfly '+code+': '+data.phrase+' ['+data.latin+'] '+url;
+        var url = 'http://httpflies.com/%23'+code;
+        var message = 'Take a look at HTTPfly '+code+': '+data.phrase+' ['+data.latin+'] ';
         
         pushHandle.tweet.attr({href:'https://twitter.com/intent/tweet?related=httpflies,deanvipond,morganesque&hashtags=httpflies&text='+message+'&url='+url});
 
         pushHandle.httpfly.find('svg').remove();
-        $('#'+code).clone().prependTo(pushHandle.httpfly);
+        $('#'+code).clone().attr('id','').prependTo(pushHandle.httpfly);
 
         var svg = pushHandle.httpfly.find('svg');
         // svg.attr('preserveAspectRatio',"xMidYMin meet");
         // $(svg).find('.butterfly').attr('transform','translate(0 0)');
+
+        if (scroll) window.scrollTo(0,0);
     }
 
     var firstCheckTimer = setTimeout(function()
     {
         console.log('timeout checkstate');
         checkState();
-    },3000);
+    },1000);
 
     function checkState(e)
     {
@@ -248,11 +276,18 @@ $(document).ready(function()
         if (history.state !== null && history.state !== undefined) code  = history.state.number;
         else code = window.location.hash.substr(1);
 
-        if (code !== '' && code !== null && code !== undefined) showSingleHttpfly(code);
-           else $('.logo').trigger('click');
+        if (code && code !== '' && code !== null && code !== undefined) 
+            showSingleHttpfly(code,true);
+        else 
+            backToIndex();
     }
 
-    $(window).on('popstate',checkState);
+    $(window).on('popstate',function()
+    {
+        console.log('popstate happened!');
+        checkState();
+    });
 
     FastClick.attach(document.body);
-});
+
+})();

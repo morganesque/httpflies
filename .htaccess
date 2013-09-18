@@ -50,6 +50,7 @@ ErrorDocument 404 /404.html
 </IfModule>
 
 AddOutputFilterByType DEFLATE text/xml 
+AddOutputFilterByType DEFLATE text/html 
 
 #
 #   WordPress - redirect everything (that doesn’t exist) to index.php

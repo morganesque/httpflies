@@ -1,11 +1,29 @@
 #starter {display:none;}
 
+.box_nojs,
+.box_sorry {
+    text-align:center;
+    width:95%;
+    max-width:640px;
+    margin:2em auto;
+    display:none;
+
+    a {
+        text-decoration:underline;
+    }
+}
+
+.no-js .box_nojs {
+    display:block;
+}
+
 .box_page {
     width:100%;
     margin:1em 0;
 }
 
 .box_case_container {    
+    display:none;
     position:relative;    
 }
 
@@ -34,6 +52,7 @@
 
 .box_index {
 
+    display:none;
     text-align:center;
 
     .box_httpfly {
@@ -41,11 +60,11 @@
         @include inline-block();
 
         $biggest: 320px;                    
-        width:$biggest;
+        width:($biggest * 9/9);
 
-        &.w2 {width:($biggest * 3/4)}
-        &.w3 {width:($biggest * 7/8)}
-        &.w4 {width:($biggest * 5/8)}
+        &.w2 {width:($biggest * 7/9)}
+        &.w3 {width:($biggest * 5/9)}
+        &.w4 {width:($biggest * 3/9)}
         position:relative;
         overflow:visible;    
         margin:1em 0 2em;
@@ -97,7 +116,16 @@
         text-decoration:none;
 
         .box_case & {
-            svg {height:100%}
+            svg {
+                height:460px;
+                max-height:100%;
+                @media only screen and ( max-width: 40em ) { // max=below 30*16px 
+                    height:320px;
+                } 
+                @media only screen and ( max-width: 30em ) { // max=below 30*16px 
+                    height:240px;
+                } 
+            }
         }
     }
 

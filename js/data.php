@@ -14,7 +14,12 @@ for (var i = data.length - 1; i >= 0; i--)
         data.splice(i,1);
         // console.log('removing');
     } else {
-        data[i].hue = (i/data.length)*360;
+        var h = (i/data.length)*300;
+        if (h > 70) h += 60;
+        data[i].hue = h;
+        data[i].size = i%3;
+        data[i].type = i%5;
+        // console.log(data[i].type);
     }
 }
 
