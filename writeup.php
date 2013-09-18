@@ -49,11 +49,13 @@ header('Content-Type: text/xml'); ?>
 
         <h2>Initial Idea</h2>
 
-        <p>Like a lot of ideas, HTTPflies appeared almost entirely by accident. I saw a tweet a few months ago, from someone who had seen an obscure HTTP status code. The tweet jokingly said something like, &lsquo;you rarely see this in the wild&rsquo;. The notion of &lsquo;rare code&rsquo; got me thinking.</p>
+        <p>Dean: Like a lot of ideas, HTTPflies appeared almost entirely by accident. I saw a tweet a few months ago, from someone who had seen an obscure HTTP status code. The tweet jokingly said something like, &lsquo;you rarely see this in the wild&rsquo;. The notion of &lsquo;rare code&rsquo; got me thinking.</p>
 
         <p>This got me thinking about the documentation and classification of animals &ndash; could we do something fun, along these lines, but for code? So Tom and I started chatting about butterfly collections, and whether we could do something to experiment with generating multiple versions of something, from a few basic graphics.</p>
 
         <h2>Why use SVG</h2>
+
+        <p>Tom:</p>
 
         <ol start="1">
             <li>SVG is cool.</li>
@@ -71,15 +73,17 @@ header('Content-Type: text/xml'); ?>
 
         <h2>Library of shapes</h2>
 
-        <p>We reduced the anatomy of a butterfly down to some component parts. Deciding that a single body would suffice and that for each wing-type we&rsquo;d want at least two layers. As every school-child knows you only need to paint half a butterfly and so it was here with one set of wings being enough to create a full butterfly. Once we had these components in place we could pick out the wings shapes we wanted, duplicate and re-colour the different parts and present as many different butterflies as we needed all with pure code. Using SVG as a repository of reusable elements like this seems like it might have interesting possiblities for the future.</p>
+        <img style="width:100%" src="wing_diagram.png" alt="diagram of butterfly wing layers" />
+
+        <p>Tom: We reduced the anatomy of a butterfly down to some component parts. Deciding that a single body would suffice and that for each wing-type we&rsquo;d want at least two layers. As every school-child knows you only need to paint half a butterfly and so it was here with one set of wings being enough to create a full butterfly. Once we had these components in place we could pick out the wings shapes we wanted, duplicate and re-colour the different parts and present as many different butterflies as we needed all with pure code. Using SVG as a repository of reusable elements like this seems like it might have interesting possiblities for the future.</p>
 
         <h2>Colours</h2>
 
-        <p>We wanted the colours to be generated kind of randomly, but it soon became clear that some combinations and types of colours were pretty hideous. We needed some logic to ensure the HTTPflies were all beautiful, and harmonious, while at the same time not too similar to others. Tom was able to omit certain colours and make some rules around how we worked out each HTTPfly&rsquo;s palette. Also, it was important that after each HTTPfly&rsquo;s palette was assigned, it would be the same each time (and not randomly created on page refresh).</p>
+        <p>Dean: We wanted the colours to be generated kind of randomly, but it soon became clear that some combinations and types of colours were pretty hideous. We needed some logic to ensure the HTTPflies were all beautiful, and harmonious, while at the same time not too similar to others. Tom was able to omit certain colours and make some rules around how we worked out each HTTPfly&rsquo;s palette. Also, it was important that after each HTTPfly&rsquo;s palette was assigned, it would be the same each time (and not randomly created on page refresh).</p>
 
         <h2>Download Size</h2>
 
-        <p>As one of the main aims was to create a lot out of very little it was important that the initial download of the site would be as small as possible. Not only that but also it was vital that we made as much of that download as possible.</p>
+        <p>Tom: As one of the main aims was to create a lot out of very little it was important that the initial download of the site would be as small as possible. Not only that but also it was vital that we made as much of that download as possible.</p>
 
         <p>The normal routine of concatenating and minifying CSS and JavaScript files was still important but as this was to be a single page website it became clear that we could simply serve the entire thing as a single HTML file which could then be served (and gzipped in transit) and not need to be added to with any other external files in order to support further interactions. Not only this but apart from the SVG code we were including inline we could also reference other (smaller) graphics via embedded data URIs meaning even the incidental imagery was included in the same file.</p>
 
@@ -106,9 +110,13 @@ header('Content-Type: text/xml'); ?>
 
         </ol>
 
-        <h2>A quick not on xHTML</h2>      
+        <h2>A quick note on xHTML</h2>      
 
-        <p>There was a moment in the middle where I thought I was going to have to serve the whole thing as xHTML. This came from a problem I had with my version of Safari (5 &mdash; for some reason) and I found a <a href="http://stackoverflow.com/questions/4504942/mobile-safari-svg-problem">question on stackoverflow</a> which seemed to point to this as the solution. I did quite a lot of work to make everything xHTML compatible (escaping various characters &amp; using CDATA blocks for JS and CSS) and it was only when I implemented <a href="http://modernizr.com/">Modernizr</a> at the end to check for compatibitly that I realised that Safari 5 isn't considered a browser that supports inline SVG. SO we dropped support for it and went back to serving HTML5 instead. You live and learn.</p> 
+        <p>Tom: There was a moment in the middle where I thought I was going to have to serve the whole thing as xHTML. This came from a problem I had with my version of Safari (5 &mdash; for some reason) and I found a <a href="http://stackoverflow.com/questions/4504942/mobile-safari-svg-problem">question on stackoverflow</a> which seemed to point to this as the solution. I did quite a lot of work to make everything xHTML compatible (escaping various characters &amp; using CDATA blocks for JS and CSS) and it was only when I implemented <a href="http://modernizr.com/">Modernizr</a> at the end to check for compatibitly that I realised that Safari 5 isn't considered a browser that supports inline SVG. So we dropped support for it and went back to serving HTML5 instead. You live and learn.</p> 
+
+        <h2>Any thoughts?</h2>
+
+        <p>If you've got any thoughts or suggestions (especially how to make it work in Firefox!!) we'd love to hear from you, tweet us <a href="http://twitter.com/httpflies/">@httpflies</a>.</p>
 
     </section><!-- .box_page -->    
     <footer class="box_footer">
