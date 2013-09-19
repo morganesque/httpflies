@@ -3,9 +3,10 @@
 @import "lib/mymixins";
 
 $bgColor:#f4f5f6;
-$headColor:#d5d8de;
+$headColor:#585d66; //#d5d8de;
+$lineColor:#d5d8de;
 $midColor:#CFD2DB;
-$textColor:#A5B0C3;
+$textColor:#585d66; // #A5B0C3;
 $darkColor: darken($textColor, 32);
 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }

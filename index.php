@@ -27,7 +27,7 @@ header('Content-Type: text/xml'); ?>
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />    
     <link rel="image_src" href="" />
     <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic' rel='stylesheet' type='text/css'>
     <style type="text/css">
     <?php if ($xml) echo '<![CDATA['."\n"; ?>

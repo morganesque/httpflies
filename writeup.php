@@ -27,7 +27,7 @@ header('Content-Type: text/xml'); ?>
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />    
     <link rel="image_src" href="" />
     <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic' rel='stylesheet' type='text/css'>
     <style type="text/css">
     <?php if ($xml) echo '<![CDATA['."\n"; ?>
@@ -40,7 +40,7 @@ header('Content-Type: text/xml'); ?>
 <body>       
     <header class="box_header">
         <?php /* <div class="logo"><a href="#" id="index-link"><?php include('./svg/logo.svg'); ?></a></div> */ ?>
-        <div class="logo"><?php include('./svg/logo.svg'); ?></div>
+        <div class="logo" onclick="window.location.href = '/';"><?php include('./svg/logo.svg'); ?></div>
         <h1 class="beta large-text">httpflies</h1>
         <hr class="line"/>
         <p class="sub">A Miscellany Of <span class="nw">Http Status Codes</span></p>
@@ -123,9 +123,12 @@ header('Content-Type: text/xml'); ?>
         <p>HTTPflies is a joint project by <a href="http://twitter.com/morganesque">Tom Morgan</a> and <a href="http://twitter.com/DeanVipond">Dean Vipond</a></p>
         <p>You can go back to <a href="/">HTTPflies</a> if you want.</p>
         <p class="small">Copyright &copy; 2013</p>
-        <div class="logo"><?php include('./svg/logo.svg'); ?></div>
+        <div class="logo" onclick="window.location.href = '/';"><?php include('./svg/logo.svg'); ?></div>
     </footer>
 <script>
+(function(){
+
+})();
 <?php if ($xml) echo '<![CDATA['."\n"; ?>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
