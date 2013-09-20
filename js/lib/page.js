@@ -1,15 +1,27 @@
 /*! functions.js -  This is the main code for the website */
 /* jshint laxcomma: true */
 
-console.log('I\'m here');
+// console.log('I\'m here');
 
 (function(){
 
-    console.log('and in here');
+    var Color = net.brehaut.Color;                      // easier to use reference.
+
+    (function(){
+        var hue = Math.random()*360;
+        var colours = [];
+        colours[0] = Color({hue:hue, saturation:0.9, lightness:0.65});    
+        colours[1] = colours[0].shiftHue((360/data.length)*5).darkenByAmount(0.3);                            
+        var stops = $('#teapot').find('stop'); 
+        $(stops[1]).attr('style','stop-color:'+colours[0].toCSS()+';stop-opacity:1');                
+        $(stops[0]).attr('style','stop-color:'+colours[1].toCSS()+';stop-opacity:1');
+    })();
+
+    // console.log('and in here');
 
     if (!Modernizr.inlinesvg)
     {
-        console.log('they dont support inlinesvg');
+        // console.log('they dont support inlinesvg');
         $('.box_sorry').show(); 
         return;
     }
@@ -17,7 +29,6 @@ console.log('I\'m here');
     $('rect.debug').remove();           // hide the degbugging rectangle (for now).
     $('.box_case_container').hide();    // hide the single httpfly container.            
     
-    var Color = net.brehaut.Color;                      // easier to use reference.
     var types = ['five','four','three','two','one'];    // types of butterfly wing.
     var huts = 0;                                       // to count the httpflies.
 
@@ -139,6 +150,8 @@ console.log('I\'m here');
         {
             var code = data[i].code;
 
+            if (code == '418') continue; // don't do this one.
+
             var hut = starter.clone();
             hut.attr('id','');
 
@@ -213,7 +226,7 @@ console.log('I\'m here');
 
     var backToIndex = function(e)
     {
-        console.log('showing: backToIndex');
+        // console.log('showing: backToIndex');
 
         if (e !== undefined) e.preventDefault();
         $('.box_index').show();
@@ -232,7 +245,7 @@ console.log('I\'m here');
 
     function showSingleHttpfly(code,scroll)
     {
-        console.log('showing single: '+code);
+        // console.log('showing single: '+code);
 
         $('.box_index').hide();
         $('.box_case_container').show();
@@ -253,7 +266,9 @@ console.log('I\'m here');
         pushHandle.tweet.attr({href:'https://twitter.com/intent/tweet?related=httpflies,deanvipond,morganesque&hashtags=httpflies&text='+message+'&url='+url});
 
         pushHandle.httpfly.find('svg').remove();
-        $('#'+code).clone().attr('id','').prependTo(pushHandle.httpfly);
+
+        var hash = code; if (code == 418) hash = 'teapot';
+        $('#'+hash).clone().attr('id','').prependTo(pushHandle.httpfly);
 
         var svg = pushHandle.httpfly.find('svg');
         // svg.attr('preserveAspectRatio',"xMidYMin meet");
@@ -264,7 +279,7 @@ console.log('I\'m here');
 
     var firstCheckTimer = setTimeout(function()
     {
-        console.log('timeout checkstate');
+        // console.log('timeout checkstate');
         checkState();
     },1000);
 
@@ -272,7 +287,7 @@ console.log('I\'m here');
     {
         clearTimeout(firstCheckTimer);
 
-        console.log('checking state!');
+        // console.log('checking state!');
         if (history.state !== null && history.state !== undefined) code  = history.state.number;
         else code = window.location.hash.substr(1);
 
@@ -284,7 +299,7 @@ console.log('I\'m here');
 
     $(window).on('popstate',function()
     {
-        console.log('popstate happened!');
+        // console.log('popstate happened!');
         checkState();
     });
 

@@ -1,7 +1,7 @@
 <?php
 // header('Content-Type: application/javascript');
 echo 'var data = ';
-include ('data-v2.json');
+include ('data-v3.json');
 echo ';';
 ?>
 
@@ -48,12 +48,13 @@ function findData(code)
 
 function findNext(code)
 {
-    console.log('finding: '+code);
     for (var i = data.length - 1; i >= 0; i--) 
     {    
         if (code == data[i].code) {
             var c = i+1;
             if (c == data.length) c = 0;
+            if (data[c].code == 418) return findNext(data[c].code);
+            if (data[c].code == 404) return findNext(data[c].code);
             return data[c];
         }
     };
@@ -66,6 +67,8 @@ function findPrev(code)
         if (code == data[i].code) {
             var c = i-1;
             if (c == -1) c = data.length - 1;
+            if (data[c].code == 418) return findPrev(data[c].code);
+            if (data[c].code == 404) return findPrev(data[c].code);
             return data[c];
         }
     };

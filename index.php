@@ -110,7 +110,10 @@ header('Content-Type: text/xml'); ?>
         <div class="logo"><?php include('./svg/logo.svg'); ?></div>
     </footer>
 
-    <div class="tester"><?php include('svg/svg.php'); ?></div>
+    <div class="tester">
+        <?php include('svg/svg.php'); ?>
+        <?php include('svg/teapot.svg'); ?>        
+    </div>
 
 <script type="text/javascript">
 <?php if ($xml) echo '<![CDATA['."\n"; ?>
