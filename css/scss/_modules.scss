@@ -42,6 +42,7 @@
 
             -moz-border-image:url($url) $border repeat;
             -webkit-border-image:url($url) $border repeat;
+            -o-border-image:url($url) $border repeat;
             border-image:url($url) $border repeat;            
         }
         

@@ -222,7 +222,7 @@
         history.pushState({number:newdata.code}, '', '#'+newdata.code);        
         showSingleHttpfly(newdata.code,false);
         ga('send', 'pageview', '#'+newdata.code);
-    }
+    };
 
     var backToIndex = function(e)
     {
@@ -268,9 +268,20 @@
         pushHandle.httpfly.find('svg').remove();
 
         var hash = code; if (code == 418) hash = 'teapot';
-        $('#'+hash).clone().attr('id','').prependTo(pushHandle.httpfly);
 
-        var svg = pushHandle.httpfly.find('svg');
+        var svg = $('#'+hash).clone();
+
+        svg.find('.back-gradient').attr('id','back-chosen');
+        svg.find('.wing-gradient').attr('id','wing-chosen');
+        svg.find('.body-gradient').attr('id','body-chosen');
+
+        svg.find('.back').attr('fill','url(#back-chosen)');                
+        svg.find('.front').attr('fill','url(#wing-chosen)');
+        svg.find('.the_body .body-shape').attr('fill','url(#body-chosen)');
+
+        svg.attr('id','').prependTo(pushHandle.httpfly);
+
+        // var svg = pushHandle.httpfly.find('svg');
         // svg.attr('preserveAspectRatio',"xMidYMin meet");
         // $(svg).find('.butterfly').attr('transform','translate(0 0)');
 
