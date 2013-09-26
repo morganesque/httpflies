@@ -105,7 +105,7 @@ header('Content-Type: text/xml'); ?>
 
     <footer class="box_footer">
         <p>HTTPflies is a joint project by <a href="http://twitter.com/morganesque">Tom Morgan</a> and <a href="http://twitter.com/DeanVipond">Dean Vipond</a></p>
-        <p><a href="/writeup.php">Read about how we made HTTPflies</a></p>
+        <p><a href="/writeup.html">Read about how we made HTTPflies</a></p>
         <p class="small">Copyright &copy; 2013</p>
         <div class="logo"><?php include('./svg/logo.svg'); ?></div>
     </footer>
